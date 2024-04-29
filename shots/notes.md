@@ -169,3 +169,337 @@
 
 * AWS Supports Enable and suspend versioning
 
+#### Static Website Hosting
+
+* S3 uses https and it allows to host a static website
+* Static website allows
+    * html
+    * css
+    * javascript
+* Lets create a simple webpage
+    * index.html (home page)
+    * error.html (error page)
+* Create a bucket with acl’s enabled and grant public-read only
+
+
+
+* Navigate to Properties => Static Website Hosting
+
+
+
+
+
+
+* We have added some bootstrap content
+```
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>My First Website</h1>
+        <p>Resize this responsive page to see the effect!</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>AWS</h3>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+          <div class="col-sm-4">
+            <h3>DevOps</h3>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+          <div class="col-sm-4">
+            <h3>Azure</h3>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+      </div>
+</body>
+```
+
+
+* Added basic javascript
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Basic Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+```
+#### CDN (Content Delivery Networks)
+
+* Lets create an s3 bucket with video files and open them in some web page
+* AWS has edge locations across the world Refer Here
+* To enable CDN, AWS has a service called as cloud front.
+* Lets create a distribution
+
+
+
+
+
+* Replace the s3 access links for videos to cloudfront names
+```
+<head></head>
+
+<body>
+    <div>
+        <video width="320" height="240" controls>
+            <source src="https://d2wax5ovdqyzkb.cloudfront.net/one.mp4" type="video/mp4" />
+        </video>
+        <video width="320" height="240" controls>
+            <source src="https://d2wax5ovdqyzkb.cloudfront.net/two.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div>
+        <video width="320" height="240" controls>
+            <source src="https://d2wax5ovdqyzkb.cloudfront.net/three.mp4" type="video/mp4" />
+        </video>
+        <video width="320" height="240" controls>
+            <source src="https://d2wax5ovdqyzkb.cloudfront.net/four.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+</body>
+```
+* Replication to other regions
+    * Mangement -> Replication rules
+
+
+
+
+
+
+
+
+
+* Replication rules will create s3 jobs
+
+#### Using CLI
+
+* AWS S3 supports two cli commands
+    * s3
+    * s3api (low level operations)
+* AWS CLI has the following syntax `aws <service> <action> [--arg1 value1 --argn valuen]`
+* Lets work with cloud shell today
+
+
+
+
+* s3 bucket uri: s3://<bucket-name>
+* s3 object uri: s3://<bucket-name>/folder-name/object-name s3://qttesting/videos/one.mp4 or s3://qttesting/one.mp4
+* Open aws s3 cli docs 
+
+    [ Refer Here : https://docs.aws.amazon.com/cli/latest/reference/s3/ ]
+
+* ls:
+
+
+
+
+* mb: create the bucket
+    * create a s3 bucket
+
+
+
+    * in this bucket create two folders
+        * music
+        * videos
+    * in the music upload some files
+    * in the videos upload some files
+    * show the contents
+        * of all the buckets
+
+
+
+        * of music folder
+    * Remove the bucket
+* To upload a file aws s3 cp
+* Create a bucket with name which has source in it and one more bucket with name which has destination in it.
+* Uplod some files in to source bucket (ensure you have folders) and copy the contents into destination bucket
+    * copy one file
+    * copy all the bucket
+        * use sync
+        * use recursive copy
+    * mv the object in a bucket from one folder to other
+* Delete all the buckets
+* Upload a file into a bucket with public read permissions
+
+#### S3 Bucket Policies
+
+* S3 has a resource based access policy which is referrd as s3 bucket policies
+* S3 has support of acl (access control list) where we can provide basic access levels such as
+    * private
+    * public-read
+    * public-write
+* We can create s3 bucket policies using policy generator Refer Here
+* Lets create a bucket in s3
+* Consider the following bucket policy, which gives accces to all objects from a specific ip
+```
+{
+  "Id": "Policy1681791649818",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1681791641953",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "49.205.254.230/32"
+        }
+      },
+      "Principal": "*"
+    }
+  ]
+}
+```
+* Add the policy to S3 bucket
+
+
+
+
+
+* Upload some text/audio/video file into bucket. Try accessing the ipaddress gets access to a file
+
+
+
+* For others we get access denied.
+* Lets change the policy to
+```
+{
+  "Id": "Policy1681791649818",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1681791641953",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],
+      "Condition": {
+        "NotIpAddress": {
+          "aws:SourceIp": "49.205.254.230/32"
+        }
+      },
+      "Principal": "*"
+    }
+  ]
+}
+```
+* Now if we want to give access to specific aws user `qtdevops`
+```
+{
+  "Id": "Policy1681791649818",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1681791641953",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
+      "Principal": "arn:aws:iam::678879106782:user/qtdevops"
+    }
+  ]
+}
+```
+* Now if we want to give access to specific aws user `devops`
+```
+{
+  "Id": "Policy1681791649818",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1681791641953",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
+      "Principal": "arn:aws:iam::678879106782:group/devops"
+    }
+  ]
+}
+```
+* Exercise: Write a bucket policy to give access to all on your objects in a bucket
+```
+{
+  "Id": "Policy1681791649818",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1681791641953",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
+      "Principal": "*"
+    }
+  ]
+}
+```
+#### Overview of Other Storage Types
+
+* Virtual Disks: This storage acts a disk to an ec2 instance. To Create Virtual Disks we have two options
+    * Elastic Block Storage (EBS)
+    * Instance-Store
+* Network Disks: To create network disks also we have two options
+    * Elastic File Share (EFS)
+    * FsX
+* EBS/Instance-Storage are disk storages which are used to serve one instance at a time, where as EFS/FsX are used to serve multiple machines over the network
+* Disk Technologies
+    * Magnetic
+    * Hard Disk Drives (HDD)
+    * Solid State Drives (SSD)
+* Important factors of Disk
+    * Size
+    * Speed
+* Performance of the disks are measured using
+    * IOPS
+    * Throughput
+
+####  
+
