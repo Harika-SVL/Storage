@@ -106,4 +106,66 @@
     * Availability: This property defines how much time in an year (calculated in %) is the data available
 * Amazon defines Durability and Availability on the basis for redundancy
 
+#### AWS S3 Contd
+
+* Redundancy:
+    * By default AWS creates 3 copies of each object and stores them in 3 zones.
+    * If we select reduced redundancy then it stores only in one zone
+* Create s3 bucket with acls enabled and ensure block all public access is unselcted
+
+
+
+* Upload any object into some folder (music)
+
+
+
+* Storage Classes
+    * Standard (default):
+        * Frequently accessed
+        * high storage cost
+        * more redundancy
+        * free tier plan (5 GB)
+        * most widely used.
+    * Infrequent Access:
+        * For older data which is not used frequently
+        * Storage cost => less
+        * access cost => more
+        * Redundancy is more
+    * One Zone -IA:
+        * less durable and infrequent access
+    * Intelligent Tier: where aws chooses storage class based on usage.
+
+
+
+* The url is https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3 i.e https://<s3-bucketname>.s3.region.amazonaws.com/<object>
+* To change storage class select object and edit storage class.
+* I want to have the object
+    * for the first 30 days in Standard
+    * 31-180 days in onezone – ia
+    * 181-1000 days in glacier
+    * 1001 day delete
+* For the above mentioned cases, AWS has Storage lifecycle
+
+
+
+
+
+
+
+
+*  Create a text file and upload to s3 bucket with public access with some content `Hello`
+
+
+
+* Now change the content and upload the file again
+
+
+
+* When we upload the older content was overwritten. If you need to preserve the changes and content, enable versioning
+
+
+
+
+
+* AWS Supports Enable and suspend versioning
 
