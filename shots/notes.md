@@ -501,5 +501,252 @@
     * IOPS
     * Throughput
 
-####  
+#### AWS Disk Storages
+
+#### Amazon Elastic Block Storage
+
+* This is a service that offers a persistent storage for ec2 instances.
+* EBS has to be os disk in AWS
+* EBS will be from the same zone in a region where ec2 is launched
+* *EBS is physically located in different server in the same zone where ec2 is launched where as instance store comes from the same physical location
+* Instance store is supported only by few instance types
+* AWS uses a term called as volume to represent disk
+* root volume is disk with os which has to be EBS
+
+
+
+* EBS can be attached to only one ec2 instance at any given moment
+* Backups of EBS volumes are called as snapshots
+* Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
+* EBS Volumes types
+    * General Purpose SSD:
+        * IOPS: 100 to 16,000 IOPS
+        * good performace at low cost
+    * Provisioned IOPS SSD:
+        * IOPS: 100 to 100000 iops
+        * Size to IOPS ratio has to be between (1:50)
+    * HDD-Backed Volume
+    * Throughput Optimized HDD
+    * ColdHDD
+
+
+
+* AWS can provide
+    * empty disks to EC2
+    * disks from snapshots to EC2
+* EC2 disk sizes can be increased, but not decreased
+
+#### Amazon Elastic File Share
+
+* Fully managed file share which can be mounted to multiple linux instances
+* This is storage from network, so it comes with security group
+* Performance Mode:
+    * General Purpose
+    * Max I/O Mode
+* EFS cannot be mounted as os disk, where as can be mounted on any other disk
+
+#### Experiments
+
+* Create two ubuntu ec2 instances in any region
+
+
+
+
+
+* Make a note of volumes created
+
+
+
+* Create a snapshot of volume
+
+
+
+
+* From snapshot create a new volume in different AZ
+
+
+
+
+
+* From snapshot create a new volume in different Region
+    * Select Snapshot
+    * Copy snapshot to any region
+    * from there create ebs volume
+
+
+
+
+#### Next Steps
+
+* Create a new empty volume (Size 1 GB)
+* Mount this to one ec2 instance
+* Create a xfs based file system
+* Restart the machine
+* See what are mounts attached
+
+#### Tasks
+
+* Create an ec2 instance
+
+
+
+* Create a new empty volume (Size 1 GB)
+
+
+
+* Attach the volume to ec2
+
+
+
+* Mount this to ec2 instance
+
+
+
+
+* Create a xfs based file system
+
+
+
+* Lets mount this to a folder /tools
+
+
+
+
+* Restart the machine
+* See what are mounts attached
+
+
+
+
+* If we need to preserve the mounts we need to deal with fstab
+* Execute `sudo blkid` and make a note of block id info
+```
+/dev/xvdf: UUID="1b12551c-f61d-4847-bd9d-30fbff96668a" BLOCK_SIZE="512" TYPE="xfs"
+```
+* Add the following info to /etc/fstab `UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2`
+* Lets restart the machine and check mounts
+* For the instructions
+
+    [ Refer here : https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal?tabs=ubuntu#find-the-disk ]
+
+
+
+* Lab Setup
+    * Ensure you have two linux instances up and running in the same region
+    * Try doing the single machine and attaching disks in windows
+
+#### Overview of Disks on Windows and linux
+
+
+
+#### Elastic File Share
+
+* This is network file share.
+* Security group exists for EFS
+* EFS is a regional resource, where we mention in which zones we want to have mounts. Sync of data across AZ’s is managed by AWS
+* EFS works only with linux instances
+* Lets create two ec2 instances in different zones
+
+
+
+* Create a efs file share
+
+
+
+
+
+
+
+* Now view details
+
+
+
+
+
+
+* Mounting using efs mount helper 
+
+    [ Refer Here : https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html ]
+
+* Installation instructions for linux 
+
+    [ Refer Here : https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-helper-ec2-linux.html ]
+
+* Mount an one ec2 instance and create files
+
+
+
+
+
+#### AWS FsX
+
+* FSx is an AWS Managed service for file shares from third parties.
+* As of now AWS Supports
+    * NetAPP
+    * Windows File Share
+    * ZFS
+    * Lustre
+
+
+
+#### Glacier
+* For Glacier Data Models
+
+    [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-data-model.html ]
+
+* Create a vault 
+
+    [ Refer Here : https://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults-cli.html ]
+
+* For the glacier cli
+
+    [ Refer here : https://docs.aws.amazon.com/cli/latest/reference/glacier/ ]
+
+* Create a vault
+```
+aws glacier create-vault --acount-id <your-acc-id> --vault-name 'qtvault'
+```
+
+
+
+* Create a zip file with some content
+* Upload the zip file to the vault 
+
+    [ Refer Here : https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-single-operation.html ]
+
+
+
+* If you want to deal with large file by breaking that into multiple parts
+
+    [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive-mpu-using-cli.html ]
+
+* For downloading the archive (during disasters)
+
+    [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-using-cli.html ]
+
+* To get all the archive ids
+```
+aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters "{\"Type\":\"inventory-retrieval\"}"
+```
+* Glacier has 3 types
+    * Instant Retrieval (costliest glacier storage cost)
+    * Instant Flexible Retrival
+    * Deep archive (cheapest glacier storage cost)
+
+
+
+#### Exercies
+
+* What is max file size for individual file in S3
+* What does eleven 9’s durability means
+* What are different storage classes in S3
+* How to take backup of EBS volume in an automated and manual fashion
+* Explain EBS disk types from slowest to fastest disk
+* Max size of Disk in EBS
+* What is Max Disk Size in EFS
+
+
+
+
+
 
