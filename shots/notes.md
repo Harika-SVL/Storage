@@ -1,21 +1,21 @@
 #### AWS Storage Popular Customers
 
-* Example-1 : Drop Box (Now they have their own infra)
+Example-1 : Drop Box (now they have their own infra)
 
 ![alt text](1.PNG)
 
-* Example-2 :  Amazon Prime music/videos, Netflix
+Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](2.PNG)
 
 #### Backup and Archival
 
-* _**Backup**_ is meant for recovering quickly from failures
-* _**Archival**_ is meant for recovering from disasters
+* _**Backup**_ is meant for recovering quickly from failures, as they are commonly occuring
+* _**Archival**_ is meant for recovering from disasters, even when it takes time
 
 ![alt text](3.PNG)
 
-* Cloud Storage solutions are very popular and cheaper for both backup and archival solutions
+* _**Cloud Storage**_ solutions are very popular and cheaper for both backup and archival solutions
 
 #### Data Engineering
 
