@@ -19,21 +19,21 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Data Engineering
 
-* Every Organization has data, which is used for two purposes
+* Every Organization has data, which is used for two purposes :
     * Business Intelligence
-    * Machine Learning/AI
-* Data in you orgnaization comes from
+    * Machine Learning / AI
+* Data in your orgnaization comes from :
     * Databases
-    * DataWarehouses
-    * PDF/WORD/TEXT
+    * DataWare houses
+    * PDF / WORD / TEXT
     * Images
     * Big Data:
         * Hadoop
         * Spark
-* Importing data into cloud in the form of lakes etcs.. (Cloud Storage infrastructure)
+* Importing data into cloud in the form of lakes etc.. (Cloud Storage infrastructure)
 * Here we need to understand the cloud storage infra services
 
-#### Object Storage for Streaming/media Solutions
+#### Object Storage for Streaming / media Solutions
 
 * S3 + Cloudfront (Netflix and Amazon Prime)
 
@@ -58,14 +58,14 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Object Storage
 
-* This is kind of storage where we can store any file and object storage for the user doesnot have any file system. Access to files in the object storage is done over http(s)
-* S3 (Simple Storage Service) is the object storage as a service.
+* This is kind of storage where we can store any file and object storage, for the users who doesnot have any file system. Access to files in the object storage is done over `http(s)`
+* _**S3 (Simple Storage Service)**_ is the object `storage as a service`
 
-#### AWS Simple Storage Service (s3)
+#### AWS Simple Storage Service _**(s3)**_
 
 * S3 has buckets. Each Bucket can have folders or objects
 * Individual object cannot be greater than 5 TB
-* Lets create an S3 bucket
+* Let's create an S3 bucket
 
 ![alt text](5.PNG)
 ![alt text](6.PNG)
@@ -78,40 +78,41 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ![alt text](13.PNG)
 
 * The url is https://qtstoragedemo.s3.amazonaws.com/one.mp4
-* Price involved in S3: AWS charges for using s3 in two dimensions
+* Price involved in S3 : AWS charges for using `s3` in two dimensions
     * Storage size
     * Access costs
 * To adjust access and storage costs, AWS has access tiers
-    * Standard: accesed frequently
-        * Access cost is less
-        * Storage cost is high
-    * Infrequent access:
-        * Storage cost is less
-        * Access cost is high
-    * glacier
-        * Storage cost is very low
+    * _**Standard**_: accesed frequently
+        * Access cost - less
+        * Storage cost - high
+    * _**Infrequent access**_:
+        * Storage cost - less
+        * Access cost - high
+    * _**Glacier**_
+        * Storage cost - very low
         * No access costs
-* Now lets understand pricing at high level Refer Here
+* Now let's understand pricing at high level 
+
+  [ Refer Here : https://calculator.aws/#/ ]
+
     * Size: 10 TB
-        * Standard:
+        * _**Standard**_:
             * Storage cost ~= 235 $
             * Access 1000 TB ~= 716 $
-        * infrequent:
+        * _**Infrequent**_:
             * Storage cost ~= 128 $
             * Access 1000 TB ~= 10,240.00
-        * glacier:
+        * _**Glacier**_:
             * Storage cost ~= 12 $
 * Terms
-    * Durability: This property defines what is the chance of data not getting corrupted
-    * Availability: This property defines how much time in an year (calculated in %) is the data available
-* Amazon defines Durability and Availability on the basis for redundancy
+    * _**Durability**_ : This property defines what is the chance of data not getting corrupted
+    * _**Availability**_: This property defines how much time in an year (calculated in %) is the data available
+* Amazon defines `Durability` and `Availability` on the _**basis for redundancy**_
 
-#### AWS S3 Contd
-
-* Redundancy:
+* _**Redundancy**_ :
     * By default AWS creates 3 copies of each object and stores them in 3 zones.
-    * If we select reduced redundancy then it stores only in one zone
-* Create s3 bucket with acls enabled and ensure block all public access is unselcted
+    * If we select reduced redundancy, then it stores only in one zone
+* Create s3 bucket with `acls enabled` and ensure `block all public access` is unselcted
 
 
 
@@ -119,32 +120,32 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* Storage Classes
-    * Standard (default):
+* _**Storage Classes**_
+    * _**Standard (default)**_ :
         * Frequently accessed
         * high storage cost
         * more redundancy
         * free tier plan (5 GB)
-        * most widely used.
-    * Infrequent Access:
-        * For older data which is not used frequently
-        * Storage cost => less
-        * access cost => more
-        * Redundancy is more
-    * One Zone -IA:
+        * most widely used
+    * _**Infrequent Access**_ :
+        * For older data which is not frequently used
+        * Storage cost - less
+        * access cost - more
+        * Redundancy - more
+    * _**One Zone - IA**_ :
         * less durable and infrequent access
-    * Intelligent Tier: where aws chooses storage class based on usage.
+    * _**Intelligent Tier**_ : where aws chooses storage class based on usage.
 
 
 
-* The url is https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3 i.e https://<s3-bucketname>.s3.region.amazonaws.com/<object>
-* To change storage class select object and edit storage class.
-* I want to have the object
+* The url is `https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3` i.e `https://<s3-bucketname>.s3.region.amazonaws.com/<object>`
+* To change storage class select object and edit storage class
+* I want to have the object :
     * for the first 30 days in Standard
-    * 31-180 days in onezone – ia
-    * 181-1000 days in glacier
+    * 31-180 days in Onezone – ia
+    * 181-1000 days in Glacier
     * 1001 day delete
-* For the above mentioned cases, AWS has Storage lifecycle
+* For the above mentioned cases, AWS has _**Storage lifecycle**_
 
 
 
@@ -161,36 +162,36 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* When we upload the older content was overwritten. If you need to preserve the changes and content, enable versioning
+* When we upload the older content gets overwritten. If you need to preserve the changes and content, enable versioning
 
 
 
 
 
-* AWS Supports Enable and suspend versioning
+* AWS supports `Enable` and `Suspend Versioning`
 
 #### Static Website Hosting
 
-* S3 uses https and it allows to host a static website
-* Static website allows
+* S3 uses `https` and it allows to host a static website
+* Static website allows :
     * html
     * css
     * javascript
-* Lets create a simple webpage
+* Let's create a simple webpage with :
     * index.html (home page)
     * error.html (error page)
-* Create a bucket with acl’s enabled and grant public-read only
+* Create a bucket with `acl’s enabled` and grant `public-read only`
 
 
 
-* Navigate to Properties => Static Website Hosting
+* Navigate to properties => Static Website Hosting
 
 
 
 
 
 
-* We have added some bootstrap content
+* We have added some bootstrap content as below :
 ```
 <head>
     <!-- Latest compiled and minified CSS -->
@@ -228,7 +229,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ```
 
 
-* Added basic javascript
+* And added basic javascript as follows :
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -273,18 +274,21 @@ Example-2 :  Amazon Prime music/videos, Netflix
 </body>
 </html>
 ```
-#### CDN (Content Delivery Networks)
+#### CDN ( Content Delivery Networks )
 
-* Lets create an s3 bucket with video files and open them in some web page
-* AWS has edge locations across the world Refer Here
-* To enable CDN, AWS has a service called as cloud front.
-* Lets create a distribution
+* Let's create an s3 bucket with video files and open them in some web page
+* AWS has `edge locations` across the world 
+
+  [ Refer Here : https://www.feitsui.com/en/article/3 ]
+
+* To enable CDN, AWS has a service called as _**Cloud Front**_
+* Let's create a distribution
 
 
 
 
 
-* Replace the s3 access links for videos to cloudfront names
+* Replacing the s3 access links for videos to cloudfront names
 ```
 <head></head>
 
@@ -325,16 +329,18 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 * AWS S3 supports two cli commands
     * s3
-    * s3api (low level operations)
-* AWS CLI has the following syntax `aws <service> <action> [--arg1 value1 --argn valuen]`
-* Lets work with cloud shell today
+    * s3 api (low level operations)
+* AWS CLI has the following syntax :
+
+  `aws <service> <action> [--arg1 value1 --argn valuen]`
+* Let's work with cloud shell today
 
 
 
 
-* s3 bucket uri: s3://<bucket-name>
-* s3 object uri: s3://<bucket-name>/folder-name/object-name s3://qttesting/videos/one.mp4 or s3://qttesting/one.mp4
-* Open aws s3 cli docs 
+* s3 bucket uri : `s3://<bucket-name>`
+* s3 object uri : `s3://<bucket-name>/folder-name/object-name` `s3://qttesting/videos/one.mp4` or `s3://qttesting/one.mp4`
+* Open aws s3 cli docs :
 
     [ Refer Here : https://docs.aws.amazon.com/cli/latest/reference/s3/ ]
 
@@ -348,39 +354,42 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-    * in this bucket create two folders
+    * In this bucket create two folders
         * music
         * videos
-    * in the music upload some files
-    * in the videos upload some files
-    * show the contents
+    * In the music upload some files
+    * In the videos upload some files
+    * Show the contents
         * of all the buckets
 
 
 
         * of music folder
     * Remove the bucket
-* To upload a file aws s3 cp
+* To upload a file `aws s3 cp`
 * Create a bucket with name which has source in it and one more bucket with name which has destination in it.
 * Uplod some files in to source bucket (ensure you have folders) and copy the contents into destination bucket
     * copy one file
     * copy all the bucket
         * use sync
         * use recursive copy
-    * mv the object in a bucket from one folder to other
+    * `mv` move the object in a bucket from one folder to the other
 * Delete all the buckets
 * Upload a file into a bucket with public read permissions
 
 #### S3 Bucket Policies
 
 * S3 has a resource based access policy which is referrd as s3 bucket policies
-* S3 has support of acl (access control list) where we can provide basic access levels such as
+* S3 has support of _**acl (access control list)**_ where we can provide basic access levels such as :
     * private
     * public-read
     * public-write
-* We can create s3 bucket policies using policy generator Refer Here
-* Lets create a bucket in s3
-* Consider the following bucket policy, which gives accces to all objects from a specific ip
+* We can create s3 bucket policies using policy generator 
+
+  [ Refer Here : https://awspolicygen.s3.amazonaws.com/policygen.html ]
+
+* Let's create a bucket in s3
+* Consider the following bucket policy, which gives accces to all objects from a specific ip :
 ```
 {
   "Id": "Policy1681791649818",
@@ -407,12 +416,12 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* Upload some text/audio/video file into bucket. Try accessing the ipaddress gets access to a file
+* Upload some text / audio / video file into the bucket. Try accessing the ipaddress which gets access to a file
 
 
 
-* For others we get access denied.
-* Lets change the policy to
+* For others we get access denied
+* Let's change the policy to
 ```
 {
   "Id": "Policy1681791649818",
@@ -465,7 +474,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
   ]
 }
 ```
-* Exercise: Write a bucket policy to give access to all on your objects in a bucket
+* _**Exercise**_ : Write a bucket policy to give access to all on your objects in a bucket
 ```
 {
   "Id": "Policy1681791649818",
@@ -483,21 +492,21 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ```
 #### Overview of Other Storage Types
 
-* Virtual Disks: This storage acts a disk to an ec2 instance. To Create Virtual Disks we have two options
+* _**Virtual Disks**_ : This storage acts a disk to an ec2 instance. To create Virtual Disks we have two options :
     * Elastic Block Storage (EBS)
     * Instance-Store
-* Network Disks: To create network disks also we have two options
+* _**Network Disks**_ : To create network disks also we have two options :
     * Elastic File Share (EFS)
     * FsX
-* EBS/Instance-Storage are disk storages which are used to serve one instance at a time, where as EFS/FsX are used to serve multiple machines over the network
-* Disk Technologies
+* _**EBS/Instance-Storage**_ are disk storages which are used to serve one instance at a time, where as _**EFS/FsX**_ are used to serve multiple machines over the network
+* _**Disk Technologies**_
     * Magnetic
     * Hard Disk Drives (HDD)
     * Solid State Drives (SSD)
-* Important factors of Disk
+* Important _**factors of Disk**_
     * Size
     * Speed
-* Performance of the disks are measured using
+* _**Performance of the disks**_ are measured using :
     * IOPS
     * Throughput
 
@@ -505,25 +514,25 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Amazon Elastic Block Storage
 
-* This is a service that offers a persistent storage for ec2 instances.
-* EBS has to be os disk in AWS
+* This is a service that offers a persistent storage for ec2 instances
+* EBS has to be _**os disk**_ in AWS
 * EBS will be from the same zone in a region where ec2 is launched
-* *EBS is physically located in different server in the same zone where ec2 is launched where as instance store comes from the same physical location
-* Instance store is supported only by few instance types
-* AWS uses a term called as volume to represent disk
-* root volume is disk with os which has to be EBS
+* EBS is physically located in different server in the same zone where ec2 is launched where as instance store comes from the same physical location
+* _**Instance store**_ is supported only by few instance types
+* AWS uses a term called as _**Volume**_ to represent disk
+* Root volume is disk with os which has to be EBS
 
 
 
 * EBS can be attached to only one ec2 instance at any given moment
-* Backups of EBS volumes are called as snapshots
+* Backups of EBS volumes are called as _**Snapshots**_
 * Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
-* EBS Volumes types
-    * General Purpose SSD:
-        * IOPS: 100 to 16,000 IOPS
+* _**EBS Volumes types**_
+    * _**General Purpose SSD**_ :
+        * IOPS : 100 to 16,000 IOPS
         * good performace at low cost
-    * Provisioned IOPS SSD:
-        * IOPS: 100 to 100000 iops
+    * _**Provisioned IOPS SSD**_ :
+        * IOPS : 100 to 100000 iops
         * Size to IOPS ratio has to be between (1:50)
     * HDD-Backed Volume
     * Throughput Optimized HDD
@@ -531,7 +540,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* AWS can provide
+* AWS can provide :
     * empty disks to EC2
     * disks from snapshots to EC2
 * EC2 disk sizes can be increased, but not decreased
@@ -540,7 +549,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 * Fully managed file share which can be mounted to multiple linux instances
 * This is storage from network, so it comes with security group
-* Performance Mode:
+* _**Performance Mode**_ :
     * General Purpose
     * Max I/O Mode
 * EFS cannot be mounted as os disk, where as can be mounted on any other disk
@@ -553,7 +562,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* Make a note of volumes created
+* Make a note of Volumes created
 
 
 
@@ -562,7 +571,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* From snapshot create a new volume in different AZ
+* From snapshot create a new volume in different _**AZ ( Availability Zone )**_
 
 
 
@@ -607,7 +616,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* Lets mount this to a folder /tools
+* Let's mount this to a folder / tools
 
 
 
@@ -618,14 +627,17 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* If we need to preserve the mounts we need to deal with fstab
+* If we need to preserve the mounts we need to deal with _**fstab**_
 * Execute `sudo blkid` and make a note of block id info
 ```
 /dev/xvdf: UUID="1b12551c-f61d-4847-bd9d-30fbff96668a" BLOCK_SIZE="512" TYPE="xfs"
 ```
-* Add the following info to /etc/fstab `UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2`
-* Lets restart the machine and check mounts
-* For the instructions
+* Add the following info to `/etc/fstab` 
+```
+UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2
+```
+* Let's restart the machine and check mounts
+* For the instructions :
 
     [ Refer here : https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal?tabs=ubuntu#find-the-disk ]
 
@@ -641,11 +653,11 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Elastic File Share
 
-* This is network file share.
+* This is network file share
 * Security group exists for EFS
 * EFS is a regional resource, where we mention in which zones we want to have mounts. Sync of data across AZ’s is managed by AWS
 * EFS works only with linux instances
-* Lets create two ec2 instances in different zones
+* Let's create two ec2 instances in different zones
 
 
 
@@ -672,7 +684,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
     [ Refer Here : https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-helper-ec2-linux.html ]
 
-* Mount an one ec2 instance and create files
+* Mount one ec2 instance and create files
 
 
 
@@ -680,8 +692,8 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### AWS FsX
 
-* FSx is an AWS Managed service for file shares from third parties.
-* As of now AWS Supports
+* FSx is an AWS Managed service for file shares from third parties
+* As of now AWS supports :
     * NetAPP
     * Windows File Share
     * ZFS
@@ -728,7 +740,7 @@ aws glacier create-vault --acount-id <your-acc-id> --vault-name 'qtvault'
 ```
 aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters "{\"Type\":\"inventory-retrieval\"}"
 ```
-* Glacier has 3 types
+* Glacier has 3 types :
     * Instant Retrieval (costliest glacier storage cost)
     * Instant Flexible Retrival
     * Deep archive (cheapest glacier storage cost)
