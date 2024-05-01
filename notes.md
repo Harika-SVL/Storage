@@ -79,31 +79,31 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/7.PNG)
 
- => select ACLs disabled
+ => select ACLs : Disabled => unselect the blocking of public access
 
 ![alt text](shots/8.PNG)
 
-=> unselect the blocking of public access
+=> select the acknowledgement => Bucket Versioning : disable
 
 ![alt text](shots/9.PNG)
 
-=> select the acknowledgement
+=> Encription type : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable => Create bucket
 
 ![alt text](shots/10.PNG)
 
-=> Bucket versioning : disable
+=> select the bucket created to insert any content 
 
 ![alt text](shots/11.PNG)
 
-=> Encription : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable
+=> Upload : select from the system => Upload
 
 ![alt text](shots/12.PNG)
 
-=> Create bucket => Upload : select from the system => Upload => copy URL
+=> copy URL
 
 ![alt text](shots/13.PNG)
 
-* The url is `https://qtstoragedemo.s3.amazonaws.com/one.mp4` 
+* The URL is `https://qtstoragedemo.s3.amazonaws.com/one.mp4` 
 
 * Price involved in S3 : AWS charges for using `s3` in two dimensions
     * Storage size
