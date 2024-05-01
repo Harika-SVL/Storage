@@ -75,15 +75,15 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/6.PNG)
 
-=> select General purpose => Give bucket name
+=> select Bucket type : General purpose => Give bucket name : qtstoragedemo
 
 ![alt text](shots/7.PNG)
 
- => select ACLs : Disabled => unselect the blocking of public access
+ => select Object Ownership : ACLs disabled => unselect the Block all public access
 
 ![alt text](shots/8.PNG)
 
-=> select the acknowledgement => Bucket Versioning : disable
+=> select the acknowledgement => Bucket Versioning : Disable
 
 ![alt text](shots/9.PNG)
 
