@@ -142,11 +142,46 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * If we select reduced redundancy, then it stores only in one zone
 * Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
 
-
+![alt text](shots/14.PNG)
+![alt text](shots/15.PNG)
+![alt text](shots/16.PNG)
+![alt text](shots/17.PNG)
+![alt text](shots/18.PNG)
 
 * Upload any object into some folder (music)
 
+=> select qtstoragedemoforaccess => Create folder => Folder name : music => Create folder
 
+![alt text](shots/19.PNG)
+![alt text](shots/20.PNG)
+
+Create folder => Folder name : videos => Create folder
+
+![alt text](shots/21.PNG)
+
+=> select music folder => upload : one.mp3 and two.mp3 => Permissions : Grant public- read access = Upload
+
+![alt text](shots/22.PNG)
+![alt text](shots/23.PNG)
+
+=> Properties => select Standard => Upload
+
+![alt text](shots/24.PNG)
+![alt text](shots/25.PNG)
+
+=> select the file and copy URL => Check ver the browser with the URL
+
+![alt text](shots/26.PNG)
+
+* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/music/one.mp3` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
+
+=> Try similar for videos upload too
+
+![alt text](shots/27.PNG)
+
+* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/videos/two.mp4` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
+
+* To change storage class select object and edit storage class
 
 #### Storage Classes
 
@@ -165,10 +200,6 @@ Example-2 :  Amazon Prime music/videos, Netflix
   * less durable and infrequent access
 * _**Intelligent Tier**_ : where aws chooses storage class based on usage.
 
-
-
-* The URL is `https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3` i.e _**https://<s3-bucketname>.s3.region.amazonaws.com/<object>**_
-* To change storage class select object and edit storage class
 * I want to have the object :
     * for the first 30 days in Standard
     * 31-180 days in Onezone – ia
