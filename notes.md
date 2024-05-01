@@ -67,6 +67,8 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * Individual object cannot be greater than 5 TB
 * Let's create an S3 bucket
 
+=> Navigate through s3 => Create bucket => Give bucket name => select ACLs disabled => unselect the blocking of public access => select the acknowledgement => Bucket versioning : disable => Encription : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable => Create bucket => Upload : select from the system => Upload => copy URL
+
 ![alt text](5.PNG)
 ![alt text](6.PNG)
 ![alt text](7.PNG)
