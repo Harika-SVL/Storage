@@ -134,12 +134,13 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * Terms
     * _**Durability**_ : This property defines what is the chance of data not getting corrupted
     * _**Availability**_: This property defines how much time in an year (calculated in %) is the data available
-* Amazon defines `Durability` and `Availability` on the _**basis for redundancy**_ (copies of the data available)
+* Amazon defines `Durability` and `Availability` on the basis of _**redundancy**_ (copies of the data available)
 
-* _**Redundancy**_ :
-    * By default AWS creates 3 copies of each object and stores them in 3 zones.
-    * If we select reduced redundancy, then it stores only in one zone
-* Create s3 bucket with `acls enabled` and ensure `block all public access` is unselcted
+#### Redundancy
+    
+* By default AWS creates 3 copies of each object and stores them in 3 zones.
+* If we select reduced redundancy, then it stores only in one zone
+* Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
 
 
 
@@ -147,25 +148,26 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 
 
-* _**Storage Classes**_
-    * _**Standard (default)**_ :
-        * Frequently accessed
-        * high storage cost
-        * more redundancy
-        * free tier plan (5 GB)
-        * most widely used
-    * _**Infrequent Access**_ :
-        * For older data which is not frequently used
-        * Storage cost - less
-        * access cost - more
-        * Redundancy - more
-    * _**One Zone - IA**_ :
-        * less durable and infrequent access
-    * _**Intelligent Tier**_ : where aws chooses storage class based on usage.
+#### Storage Classes
+
+* _**Standard (default)**_ :
+  * Frequently accessed
+  * high storage cost
+  * more redundancy
+  * free tier plan (5 GB)
+  * most widely used
+* _**Infrequent Access**_ :
+  * For older data which is not frequently used
+  * Storage cost - less
+  * access cost - more
+  * Redundancy - more
+* _**One Zone - IA**_ :
+  * less durable and infrequent access
+* _**Intelligent Tier**_ : where aws chooses storage class based on usage.
 
 
 
-* The url is `https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3` i.e `https://<s3-bucketname>.s3.region.amazonaws.com/<object>`
+* The URL is `https://qtstoragedemoforaccess.s3.ap-south-1.amazonaws.com/music/one.mp3` i.e _**https://<s3-bucketname>.s3.region.amazonaws.com/<object>**_
 * To change storage class select object and edit storage class
 * I want to have the object :
     * for the first 30 days in Standard
