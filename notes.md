@@ -181,8 +181,6 @@ Create folder => Folder name : videos => Create folder
 
 * The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/videos/two.mp4` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
 
-* To change storage class select object and edit storage class
-
 #### Storage Classes
 
 * _**Standard (default)**_ :
@@ -200,6 +198,12 @@ Create folder => Folder name : videos => Create folder
   * less durable and infrequent access
 * _**Intelligent Tier**_ : where aws chooses storage class based on usage.
 
+* To change storage class 
+
+=> select the bucket => select object => object actions => Edit storage class => select the storage class => Save changes
+
+[_**Note**_ : It is difficult to do individually for many number of objects from a bucket]
+
 * I want to have the object :
     * for the first 30 days in Standard
     * 31-180 days in Onezone – ia
@@ -207,28 +211,59 @@ Create folder => Folder name : videos => Create folder
     * 1001 day delete
 * For the above mentioned cases, AWS has _**Storage lifecycle**_
 
+=> select bucket => click on management => Create lifecycle rule
 
+![alt text](shots/28.PNG)
 
+=> Lifecycle rule name : forallcontent => choose rule scope : Apply to all objects in the bucket => select the acknowledgement
 
+![alt text](shots/29.PNG)
 
+=> Lifecycle rule actions : Move current versions of objects in between storage classes => choose storage class transitions : Standard-IA => Days after object creation : 31 => Add transition
 
+![alt text](shots/30.PNG)
 
+=> choose storage class transitions : Glacier Instant Retrieval => Days after object creation : 180 
 
-*  Create a text file and upload to s3 bucket with public access with some content `Hello`
+![alt text](shots/31.PNG)
 
+=> create rule
 
+![alt text](shots/32.PNG)
+![alt text](shots/33.PNG)
+
+*  Create a text file and upload to s3 into `docs` (new folder) bucket with public access with some content `hello` and try accessing it 
+
+![alt text](shots/34.PNG)
+![alt text](shots/35.PNG)
+![alt text](shots/36.PNG)
+![alt text](shots/37.PNG)
 
 * Now change the content and upload the file again
 
+![alt text](shots/38.PNG)
+![alt text](shots/39.PNG)
+![alt text](shots/40.PNG)
 
+* When we upload the file after changing the content, the older content gets overwritten. If you need to preserve the changes and content, enable _**Versioning**_
 
-* When we upload the older content gets overwritten. If you need to preserve the changes and content, enable versioning
+=> select bucket => click on Properties => Bucket Versioning => select Edit 
 
+![alt text](shots/41.PNG)
 
+=> Enable => Save changes
 
+![alt text](shots/42.PNG)
 
+=> change the content and upload again 
 
-* AWS supports `Enable` and `Suspend Versioning`
+![alt text](shots/43.PNG)
+
+=> show versions
+
+![alt text](shots/44.PNG)
+
+* AWS supports _**Enable**_ and _**Suspend**_ Versioning
 
 #### Static Website Hosting
 
