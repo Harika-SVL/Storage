@@ -2,18 +2,18 @@
 
 Example-1 : Drop Box (now they have their own infra)
 
-![alt text](1.PNG)
+![alt text](shots/1.PNG)
 
 Example-2 :  Amazon Prime music/videos, Netflix
 
-![alt text](2.PNG)
+![alt text](shots/2.PNG)
 
 #### Backup and Archival
 
 * _**Backup**_ is meant for recovering quickly from failures, as they are commonly occuring
 * _**Archival**_ is meant for recovering from disasters, even when it takes time
 
-![alt text](3.PNG)
+![alt text](shots/3.PNG)
 
 * _**Cloud Storage**_ solutions are very popular and cheaper for both backup and archival solutions
 
@@ -54,7 +54,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Storage Services by AWS
 
-![alt text](4.PNG)
+![alt text](shots/4.PNG)
 
 #### Object Storage
 
@@ -67,17 +67,41 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * Individual object cannot be greater than 5 TB
 * Let's create an S3 bucket
 
-=> Navigate through s3 => Create bucket => Give bucket name => select ACLs disabled => unselect the blocking of public access => select the acknowledgement => Bucket versioning : disable => Encription : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable => Create bucket => Upload : select from the system => Upload => copy URL
+=> Navigate through s3       
 
-![alt text](5.PNG)
-![alt text](6.PNG)
-![alt text](7.PNG)
-![alt text](8.PNG)
-![alt text](9.PNG)
-![alt text](10.PNG)
-![alt text](11.PNG)
-![alt text](12.PNG)
-![alt text](13.PNG)
+![alt text](shots/5.PNG)
+
+=> Create bucket
+
+![alt text](shots/6.PNG)
+
+=> select General purpose => Give bucket name
+
+![alt text](shots/7.PNG)
+
+ => select ACLs disabled
+
+![alt text](shots/8.PNG)
+
+=> unselect the blocking of public access
+
+![alt text](shots/9.PNG)
+
+=> select the acknowledgement
+
+![alt text](shots/10.PNG)
+
+=> Bucket versioning : disable
+
+![alt text](shots/11.PNG)
+
+=> Encription : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable
+
+![alt text](shots/12.PNG)
+
+=> Create bucket => Upload : select from the system => Upload => copy URL
+
+![alt text](shots/13.PNG)
 
 * The url is `https://qtstoragedemo.s3.amazonaws.com/one.mp4` 
 
