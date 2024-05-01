@@ -77,7 +77,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ![alt text](12.PNG)
 ![alt text](13.PNG)
 
-* The url is `https://qtstoragedemo.s3.amazonaws.com/one.mp4`
+* The url is `https://qtstoragedemo.s3.amazonaws.com/one.mp4` 
 
 * Price involved in S3 : AWS charges for using `s3` in two dimensions
     * Storage size
@@ -108,7 +108,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * Terms
     * _**Durability**_ : This property defines what is the chance of data not getting corrupted
     * _**Availability**_: This property defines how much time in an year (calculated in %) is the data available
-* Amazon defines `Durability` and `Availability` on the _**basis for redundancy**_
+* Amazon defines `Durability` and `Availability` on the _**basis for redundancy**_ (copies of the data available)
 
 * _**Redundancy**_ :
     * By default AWS creates 3 copies of each object and stores them in 3 zones.
