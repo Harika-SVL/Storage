@@ -77,7 +77,8 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ![alt text](12.PNG)
 ![alt text](13.PNG)
 
-* The url is https://qtstoragedemo.s3.amazonaws.com/one.mp4
+* The url is `https://qtstoragedemo.s3.amazonaws.com/one.mp4`
+
 * Price involved in S3 : AWS charges for using `s3` in two dimensions
     * Storage size
     * Access costs
