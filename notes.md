@@ -30,7 +30,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
     * Big Data:
         * Hadoop
         * Spark
-* Importing data into cloud in the form of lakes etc.. (Cloud Storage infrastructure)
+* Importing data into cloud in the form of lakes etc.. (_**Cloud Storage infrastructure**_)
 * Here we need to understand the cloud storage infra services
 
 #### Object Storage for Streaming / media Solutions
@@ -39,7 +39,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 #### Block Storage for Virtual Machines
 
-* EBS (Elastic Block Storage)
+* EBS (_**Elastic Block Storage**_)
 
 #### Units in Storage
 
