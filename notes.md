@@ -314,7 +314,7 @@ Create folder => Folder name : videos => Create folder
 
 ![alt text](shots/52.PNG)
 
-* We have added some bootstrap content as below :
+* We have added some bootstrap content to `index.html` as below :
 ```
 <head>
     <!-- Latest compiled and minified CSS -->
@@ -350,9 +350,11 @@ Create folder => Folder name : videos => Create folder
       </div>
 </body>
 ```
+=> Upload the files to the object and from properties take the URL to check if working
 
+![alt text](shots/53.PNG)
 
-* And added basic javascript as follows :
+* And We have added some javascript content to `index.html` as below :
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -397,6 +399,10 @@ Create folder => Folder name : videos => Create folder
 </body>
 </html>
 ```
+=> Upload the files to the object and from properties take the URL to check if working
+
+![alt text](shots/54.PNG)
+
 #### CDN ( Content Delivery Networks )
 
 * Let's create an s3 bucket with video files and open them in some web page
