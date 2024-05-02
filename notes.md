@@ -420,7 +420,6 @@ Create folder => Folder name : videos => Create folder
 * Replacing the s3 access links for videos to cloudfront names
 ```
 <head></head>
-
 <body>
     <div>
         <video width="320" height="240" controls>
@@ -438,9 +437,10 @@ Create folder => Folder name : videos => Create folder
             <source src="https://d2wax5ovdqyzkb.cloudfront.net/four.mp4" type="video/mp4" />
         </video>
     </div>
-
 </body>
 ```
+
+
 * Replication to other regions
     * Mangement -> Replication rules
 
