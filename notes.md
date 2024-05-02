@@ -483,9 +483,19 @@ Create folder => Folder name : videos => Create folder
 
 * Replication rules will create s3 jobs
 
--> aws s3 cp s3://qtvideos.learing s3://qtwebpage.website
--> aws s3 cp --recursive s3://qtvideos.learning s3://qtwebpage.website
-
+* In the local system we change as follows :
+```
+-> aws s3 cp s3://qtvideos.learning s3://mywebpage.website
+-> aws s3 cp --recursive s3://qtvideos.learning s3://mywebpage.website
+-> aws s3 sync s3://qtvideos.learning s3://mywebpage.website
+-> mkdir c:\temp\content
+-> cd c:\temp\content
+-> aws s3 sync s3://qtvideos.learning .
+-> ls
+-> cp c:\local sysytem\Downloads\*.mp3
+-> ls
+-> aws s3 sync . s3://qtvideos.learning 
+```
 #### Using CLI
 
 * AWS S3 supports two cli commands
@@ -496,8 +506,8 @@ Create folder => Folder name : videos => Create folder
   `aws <service> <action> [--arg1 value1 --argn valuen]`
 * Let's work with cloud shell today
 
-
-
+![alt text](shots/69.PNG)
+![alt text](shots/70.PNG)
 
 * s3 bucket uri : `s3://<bucket-name>`
 * s3 object uri : `s3://<bucket-name>/folder-name/object-name` `s3://qttesting/videos/one.mp4` or `s3://qttesting/one.mp4`
@@ -506,37 +516,57 @@ Create folder => Folder name : videos => Create folder
     [ Refer Here : https://docs.aws.amazon.com/cli/latest/reference/s3/ ]
 
 * ls:
-
-
-
+  
+  ![alt text](shots/71.PNG)
+  ![alt text](shots/72.PNG)
 
 * mb: create the bucket
-    * create a s3 bucket
+    * create a s3 bucket `qts3fromcli`
 
-
+      ![alt text](shots/73.PNG)    
 
     * In this bucket create two folders
-        * music
+        * music 
         * videos
     * In the music upload some files
+      ```
+      touch one.mp3
+      aws s3 cp one.mp3 s3:\\music\one.mp3
+      ```
     * In the videos upload some files
+      ```
+      touch one.mp4
+      aws s3 cp one.mp4 s3:\\videos\one.mp4
+      touch two.mp4
+      aws s3 cp two.mp4 s3:\\videos\two.mp4
+      ```
     * Show the contents
         * of all the buckets
-
-
-
         * of music folder
-    * Remove the bucket
+
+        ![alt text](shots/74.PNG)
+
+    * Remove the bucket `aws s3 rb --force s3://qts3fromcli`
 * To upload a file `aws s3 cp`
+
+#### Example
+
 * Create a bucket with name which has source in it and one more bucket with name which has destination in it.
 * Uplod some files in to source bucket (ensure you have folders) and copy the contents into destination bucket
     * copy one file
     * copy all the bucket
         * use sync
         * use recursive copy
-    * `mv` move the object in a bucket from one folder to the other
+    * `mv` move the object in a bucket from one folder to other folder
 * Delete all the buckets
-* Upload a file into a bucket with public read permissions
+* Upload a file into a bucket with `public-read permissions`
+* Example
+```
+echo "Hello" > one.txt
+aws s3 ls
+aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
+```
+* Go to bucket => copy URL => expose over browser
 
 #### S3 Bucket Policies
 
