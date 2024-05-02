@@ -446,16 +446,40 @@ Create folder => Folder name : videos => Create folder
 ```
 ![alt text](shots/59.PNG)
 
-* Replication to other regions
-    * Mangement -> Replication rules
+#### Replication to other regions
 
+=> select a bucket => click on Mangement => Replication rules => Create replication rules
 
+![alt text](shots/60.PNG)
 
+=> Replication rule name : copyall => Enable bucket versioning
 
+![alt text](shots/61.PNG)
+![alt text](shots/62.PNG)
 
+=> Source bucket : select Apply to all the bucket
 
+![alt text](shots/63.PNG)
 
+=> Destination : Browse : qtwebpage.website => Enable bucket versioning
 
+![alt text](shots/64.PNG)
+
+ =>  IAM role : select Create new role 
+ 
+![alt text](shots/65.PNG)
+ 
+=> Save => select yes,replicate existing objects => Submit
+
+![alt text](shots/66.PNG)
+
+=> Generate completion report : choose browser os the destination => Save
+
+![alt text](shots/67.PNG)
+
+=> A job gets created
+
+![alt text](shots/68.PNG)
 
 * Replication rules will create s3 jobs
 
