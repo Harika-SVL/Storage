@@ -274,17 +274,45 @@ Create folder => Folder name : videos => Create folder
     * javascript
 * Let's create a simple webpage with :
     * index.html (home page)
+    ```
+    <h1>Sample Webpage for learning</h1>
+    ```
     * error.html (error page)
-* Create a bucket with `acl’s enabled` and grant `public-read only`
+    ```
+    <h1>Error occurred</h1>
+    <h2>Contact your admin</h2>
+    ```
+    ![alt text](shots/45.PNG)
 
+* Create a bucket with `ACLs enabled` and grant `public-read only access`
 
+=> Create bucket => select general purpose => bucket name : mywebpage.website => select ACLs enabled => unblock the public access and select the acknowledgement => Create bucket
 
-* Navigate to properties => Static Website Hosting
+![alt text](shots/46.PNG)
 
+=> select the bucket => click on properties =>  go to Static Website Hosting => Edit 
 
+![alt text](shots/47.PNG)
 
+=> Static website hosting : Enable => Hosting type : Host a static website
 
+![alt text](shots/48.PNG)
 
+=>select the document type => Save changes  
+
+![alt text](shots/49.PNG)
+
+=> copy the URL obtained 
+
+![alt text](shots/50.PNG)
+
+=> Navigate to objects and upload the documents along with public access
+
+![alt text](shots/51.PNG)
+
+=> Expose over the wesite with the URL
+
+![alt text](shots/52.PNG)
 
 * We have added some bootstrap content as below :
 ```
