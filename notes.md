@@ -483,6 +483,9 @@ Create folder => Folder name : videos => Create folder
 
 * Replication rules will create s3 jobs
 
+-> aws s3 cp s3://qtvideos.learing s3://qtwebpage.website
+-> aws s3 cp --recursive s3://qtvideos.learning s3://qtwebpage.website
+
 #### Using CLI
 
 * AWS S3 supports two cli commands
