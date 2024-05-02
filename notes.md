@@ -413,33 +413,38 @@ Create folder => Folder name : videos => Create folder
 * To enable CDN, AWS has a service called as _**Cloud Front**_
 * Let's create a distribution
 
+=> Navigate through Cloud Front => Create Distribution => select Origin domain : qtvideos.learning => Create distribution
 
-
-
+![alt text](shots/55.PNG)
+![alt text](shots/56.PNG)
+![alt text](shots/57.PNG)
 
 * Replacing the s3 access links for videos to cloudfront names
+
+![alt text](shots/58.PNG)
+
 ```
 <head></head>
 <body>
     <div>
         <video width="320" height="240" controls>
-            <source src="https://d2wax5ovdqyzkb.cloudfront.net/one.mp4" type="video/mp4" />
+            <source src="https://d3innnak3p96l6.cloudfront.net/one.mp4" type="video/mp4" />
         </video>
         <video width="320" height="240" controls>
-            <source src="https://d2wax5ovdqyzkb.cloudfront.net/two.mp4" type="video/mp4" />
+            <source src="https://d3innnak3p96l6.cloudfront.net/two.mp4" type="video/mp4" />
         </video>
     </div>
     <div>
         <video width="320" height="240" controls>
-            <source src="https://d2wax5ovdqyzkb.cloudfront.net/three.mp4" type="video/mp4" />
+            <source src="https://d3innnak3p96l6.cloudfront.net/three.mp4" type="video/mp4" />
         </video>
         <video width="320" height="240" controls>
-            <source src="https://d2wax5ovdqyzkb.cloudfront.net/four.mp4" type="video/mp4" />
+            <source src="https://d3innnak3p96l6.cloudfront.net/four.mp4" type="video/mp4" />
         </video>
     </div>
 </body>
 ```
-
+![alt text](shots/59.PNG)
 
 * Replication to other regions
     * Mangement -> Replication rules
