@@ -593,25 +593,53 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
   * public-read
   * public-write
 
+* Let's create a bucket in s3
+
+=> Create bucket => Bucket type : General purpose => Bucket name : qtaccesspolicy => Object Ownership : ACLs disabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge => Create bucket
+
+![alt text](shots/75.PNG)
+
 * We can create s3 bucket policies using policy generator 
 
   [ Refer Here : https://awspolicygen.s3.amazonaws.com/policygen.html ]
 
-* Let's create a bucket in s3
-* Consider the following bucket policy, which gives accces to all objects from a `specific ip` :
+* Consider the following bucket policy, which gives accces to all objects from a `specific ip`
+
+=> Copy ARN from bucket
+
+![alt text](shots/76.PNG)
+
+=> Find `my ip` - `117.200.2.183/32` from Ec2 or Security groups
+
+* From the policy generator
+
+=> Select Type of Policy : S3 Bucket Policy => Effect : Allow => Principal : * => Actions : select All actions => Amazon Resource Name (ARN) : [copied from the bucket] 
+
+![alt text](shots/77.PNG)
+
+=> Add conditions => Condition : IpAddress => Key : aws:SourceIp => Value : 117.200.2.183/32 => Add Statement 
+
+![alt text](shots/78.PNG)
+
+=> Geneate Policy
+
+![alt text](shots/79.PNG)
+
+=> Policy is as follows :
+
 ```
 {
-  "Id": "Policy1681791649818",
+  "Id": "Policy1714800812093",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1681791641953",
+      "Sid": "Stmt1714800733599",
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],
       "Condition": {
         "IpAddress": {
-          "aws:SourceIp": "49.205.254.230/32"
+          "aws:SourceIp": "117.200.2.183/32"
         }
       },
       "Principal": "*"
@@ -621,13 +649,26 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 ```
 * Add the policy to S3 bucket
 
+=> select the bucket => click on permissions 
 
+![alt text](shots/80.PNG)
 
+=> Bucket policy => Edit 
 
+![alt text](shots/81.PNG)
+
+=> paste te generated policy 
+
+![alt text](shots/82.PNG)
+
+=> Save changes
+
+![alt text](shots/83.PNG)
 
 * Upload some text / audio / video file into the bucket. Try accessing the ipaddress which gets access to a file
 
-
+![alt text](shots/84.PNG)
+![alt text](shots/85.PNG)
 
 * For others we get access denied
 * Let's change the policy to
