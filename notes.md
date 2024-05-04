@@ -879,59 +879,94 @@ Write a bucket policy to give access to all on your objects in a bucket
 
 * Create an ec2 instance
 
+=> Launch instance => Inastance name : instance => ubuntu => keypair => Security group => 8GB, gp2 type => Launch instance
 
+![alt text](shots/104.PNG)
 
 * Create a new empty volume (Size 1 GB)
 
+=> volumes => Create volume => size : 1GB => Availability zone : same as ec2 => Create volume => name : tools
 
+![alt text](shots/105.PNG)
+![alt text](shots/106.PNG)
 
 * Attach the volume to ec2
 
+=> select the volume => Actions : Attach volume => instance : select the running instance => Device name : /dev/sdf => Attach volume
 
+![alt text](shots/107.PNG)
+![alt text](shots/108.PNG)
 
 * Mount this to ec2 instance
 
+=> login into the instance => sudo lsblk => 
 
-
+![alt text](shots/109.PNG)
 
 * Create a xfs based file system
 
+=> sudo mkfs -t xfs /dev/xvdf
 
+![alt text](shots/110.PNG)
 
 * Let's mount this to a folder / tools
 
+=> sudo mkdir /tools => sudo mount -t xfs /dev/xvdf /tools => sudo df -h => sudo lsblk
 
-
+![alt text](shots/111.PNG)
+![alt text](shots/112.PNG)
 
 * Restart the machine
+
+=> stop and start the instance => relogin using new ip
+
 * See what are mounts attached
 
+=> sudo lsblk => sudo df -h
 
-
+![alt text](shots/113.PNG)
 
 * If we need to preserve the mounts we need to deal with _**fstab**_
 * Execute `sudo blkid` and make a note of block id info
+
+=> sudo blkid
+
+![alt text](shots/114.PNG)
+
 ```
-/dev/xvdf: UUID="1b12551c-f61d-4847-bd9d-30fbff96668a" BLOCK_SIZE="512" TYPE="xfs"
+/dev/xvdf: UUID="b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6" BLOCK_SIZE="512" TYPE="xfs"
 ```
 * Add the following info to `/etc/fstab` 
+
+=> sudo vi /etc/fstab
+
+![alt text](shots/115.PNG)
+
 ```
-UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2
+UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 ```
+![alt text](shots/116.PNG)
+
 * Let's restart the machine and check mounts
+
+=> stop and start the instance => relogin with the new ip
+
+[ _**Note**_ : When doesn't work let's connect the volume to another running new instance]
+
 * For the instructions :
 
     [ Refer here : https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal?tabs=ubuntu#find-the-disk ]
 
-
-
-* Lab Setup
-    * Ensure you have two linux instances up and running in the same region
-    * Try doing the single machine and attaching disks in windows
+  ![alt text](shots/117.PNG)
 
 ### Overview of Disks on Windows and linux
 
+![alt text](shots/118.PNG)
 
+#### Lab Setup
+    
+  * Ensure you have two linux instances up and running in the same region
+  * Try doing the single machine and attaching disks in windows
 
 ### Elastic File Share
 
