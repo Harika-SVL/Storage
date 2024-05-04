@@ -869,7 +869,9 @@ Write a bucket policy to give access to all on your objects in a bucket
 
   => go to the selected region => select the snapshot => create volume from snapshot 
 
-   
+   ![alt text](shots/101.PNG)
+   ![alt text](shots/102.PNG)
+   ![alt text](shots/103.PNG)
 
   => Terminate the machines => delete the volumes => delete the snapshots
 
