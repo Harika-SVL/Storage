@@ -868,6 +868,9 @@ Write a bucket policy to give access to all on your objects in a bucket
   * from there create ebs volume
 
   => go to the selected region => select the snapshot => create volume from snapshot 
+
+   
+
   => Terminate the machines => delete the volumes => delete the snapshots
 
 ### Tasks
