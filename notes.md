@@ -777,28 +777,28 @@ Write a bucket policy to give access to all on your objects in a bucket
 * AWS uses a term called as _**Volume**_ to represent disk
 * Root volume is disk with os which has to be EBS
 
-
+![alt text](shots/87.PNG)
 
 * EBS can be attached to only one ec2 instance at any given moment
 * Backups of EBS volumes are called as _**Snapshots**_
 * Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
 * _**EBS Volumes types**_
-    * _**General Purpose SSD**_ :
+    1. _**General Purpose SSD**_ :
         * IOPS : 100 to 16,000 IOPS
         * good performace at low cost
-    * _**Provisioned IOPS SSD**_ :
+    2. _**Provisioned IOPS SSD**_ :
         * IOPS : 100 to 100000 iops
         * Size to IOPS ratio has to be between (1:50)
-    * HDD-Backed Volume
-    * Throughput Optimized HDD
-    * ColdHDD
+    3. HDD-Backed Volume
+    4. Throughput Optimized HDD
+    5. ColdHDD
 
-
+       ![alt text](shots/88.PNG)
 
 * AWS can provide :
     * empty disks to EC2
     * disks from snapshots to EC2
-* EC2 disk sizes can be increased, but not decreased
+* EC2 disk sizes can be increased, but not decreased (due to the chhance of memory loss)
 
 #### Amazon Elastic File Share
 
@@ -813,40 +813,62 @@ Write a bucket policy to give access to all on your objects in a bucket
 
 * Create two ubuntu ec2 instances in any region
 
+=> Instances => Launch instances => Instance name : sample service => No.of instances : 2 => Configure storage => Advanced
 
+![alt text](shots/89.PNG)
+![alt text](shots/90.PNG)
 
+=> Change Volume type : gp2 => Delete on termination : yes => Launch Instance
 
+![alt text](shots/91.PNG)
 
 * Make a note of Volumes created
 
-
+![alt text](shots/92.PNG)
 
 * Create a snapshot of volume
 
+=> select a volume created => Actions => Create snapshot
 
+![alt text](shots/93.PNG)
 
+=> Description : mysnapshot 
+
+![alt text](shots/94.PNG)
+
+=> Create snapshot
+
+![alt text](shots/95.PNG)
 
 * From snapshot create a new volume in different _**AZ ( Availability Zone )**_
 
+=> select the snapshot => Actions : Create volume from snapshot
 
+![alt text](shots/96.PNG)
 
+=> Availability zone : us-west-2a => Create volume
 
+![alt text](shots/97.PNG)
+![alt text](shots/98.PNG)
 
 * From snapshot create a new volume in different Region
-    * Select Snapshot
-    * Copy snapshot to any region
-    * from there create ebs volume
 
+  * Select Snapshot
 
+  => select a snapshot => Actions => copy snapshot 
+  
+  ![alt text](shots/99.PNG)
 
+  * Copy snapshot to any region
 
-#### Next Steps
+  => change the region => Copy snapshot 
+  
+  ![alt text](shots/100.PNG)
+  
+  * from there create ebs volume
 
-* Create a new empty volume (Size 1 GB)
-* Mount this to one ec2 instance
-* Create a xfs based file system
-* Restart the machine
-* See what are mounts attached
+  => go to the selected region => select the snapshot => create volume from snapshot 
+  => Terminate the machines => delete the volumes => delete the snapshots
 
 ### Tasks
 
