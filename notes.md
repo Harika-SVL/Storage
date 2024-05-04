@@ -588,16 +588,17 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 ### S3 Bucket Policies
 
 * S3 has a resource based access policy which is referrd as s3 bucket policies
-* S3 has support of _**acl (access control list)**_ where we can provide basic access levels such as :
-    * private
-    * public-read
-    * public-write
+* S3 has support of _**ACL (Access Control List)**_ where we can provide basic access levels such as :
+  * private
+  * public-read
+  * public-write
+
 * We can create s3 bucket policies using policy generator 
 
   [ Refer Here : https://awspolicygen.s3.amazonaws.com/policygen.html ]
 
 * Let's create a bucket in s3
-* Consider the following bucket policy, which gives accces to all objects from a specific ip :
+* Consider the following bucket policy, which gives accces to all objects from a `specific ip` :
 ```
 {
   "Id": "Policy1681791649818",
