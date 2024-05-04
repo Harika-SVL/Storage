@@ -159,7 +159,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/17.PNG)
 
-=> Encryption type : Server-side encryption with Amazon S3 managed keys(SSE-S3) => Bucket Key : Enable => Create bucket
+=> Encryption type : Server-side encryption with Amazon S3 managed keys (SSE-S3) => Bucket Key : Enable => Create bucket
 
 ![alt text](shots/18.PNG)
 
@@ -170,7 +170,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ![alt text](shots/19.PNG)
 ![alt text](shots/20.PNG)
 
-Create folder => Folder name : videos => Create folder
+=> Create folder => Folder name : videos => Create folder
 
 ![alt text](shots/21.PNG)
 
@@ -184,7 +184,7 @@ Create folder => Folder name : videos => Create folder
 ![alt text](shots/24.PNG)
 ![alt text](shots/25.PNG)
 
-=> select the file and copy URL => Check ver the browser with the URL
+=> select the file and copy URL => Check over the browser with the URL
 
 ![alt text](shots/26.PNG)
 
@@ -196,22 +196,22 @@ Create folder => Folder name : videos => Create folder
 
 * The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/videos/two.mp4` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
 
-#### Storage Classes
+### Storage Classes
 
-* _**Standard (default)**_ :
+1. _**Standard (default)**_ :
   * Frequently accessed
   * high storage cost
   * more redundancy
   * free tier plan (5 GB)
   * most widely used
-* _**Infrequent Access**_ :
+2. _**Infrequent Access**_ :
   * For older data which is not frequently used
   * Storage cost - less
   * access cost - more
   * Redundancy - more
-* _**One Zone - IA**_ :
+3. _**One Zone - IA**_ :
   * less durable and infrequent access
-* _**Intelligent Tier**_ : where aws chooses storage class based on usage.
+4. _**Intelligent Tier**_ : where aws chooses storage class based on usage.
 
 * To change storage class 
 
@@ -224,17 +224,19 @@ Create folder => Folder name : videos => Create folder
     * 31-180 days in Onezone – ia
     * 181-1000 days in Glacier
     * 1001 day delete
-* For the above mentioned cases, AWS has _**Storage lifecycle**_
+* For the above mentioned cases, aws has _**Storage lifecycle**_
+
+### Storage Lifecycle
 
 => select bucket => click on management => Create lifecycle rule
 
 ![alt text](shots/28.PNG)
 
-=> Lifecycle rule name : forallcontent => choose rule scope : Apply to all objects in the bucket => select the acknowledgement
+=> Lifecycle rule name : forallcontent => choose rule scope : Apply to all objects in the bucket => select the acknowledge
 
 ![alt text](shots/29.PNG)
 
-=> Lifecycle rule actions : Move current versions of objects in between storage classes => choose storage class transitions : Standard-IA => Days after object creation : 31 => Add transition
+=> Lifecycle rule actions : Move current versions of objects between storage classes => choose storage class transitions : Standard-IA => Days after object creation : 31 => Add transition
 
 ![alt text](shots/30.PNG)
 
@@ -242,12 +244,12 @@ Create folder => Folder name : videos => Create folder
 
 ![alt text](shots/31.PNG)
 
-=> create rule
+=> Create rule
 
 ![alt text](shots/32.PNG)
 ![alt text](shots/33.PNG)
 
-*  Create a text file and upload to s3 into `docs` (new folder) bucket with public access with some content `hello` and try accessing it 
+*  Create a text file `hello` and upload to s3 into `docs`folder in the bucket with public access with some content and try accessing it 
 
 ![alt text](shots/34.PNG)
 ![alt text](shots/35.PNG)
@@ -280,7 +282,7 @@ Create folder => Folder name : videos => Create folder
 
 * AWS supports _**Enable**_ and _**Suspend**_ Versioning
 
-#### Static Website Hosting
+### Static Website Hosting
 
 * S3 uses `https` and it allows to host a static website
 * Static website allows :
@@ -301,7 +303,7 @@ Create folder => Folder name : videos => Create folder
 
 * Create a bucket with `ACLs enabled` and grant `public-read only access`
 
-=> Create bucket => select general purpose => bucket name : mywebpage.website => select ACLs enabled => unblock the public access and select the acknowledgement => Create bucket
+=> Create bucket => Bucket type : General purpose => Bucket name : mywebpage.website => Object Ownership : ACLs enabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge => Create bucket
 
 ![alt text](shots/46.PNG)
 
@@ -418,7 +420,7 @@ Create folder => Folder name : videos => Create folder
 
 ![alt text](shots/54.PNG)
 
-#### CDN ( Content Delivery Networks )
+### CDN ( Content Delivery Networks )
 
 * Let's create an s3 bucket with video files and open them in some web page
 * AWS has `edge locations` across the world 
@@ -472,7 +474,7 @@ Create folder => Folder name : videos => Create folder
 ![alt text](shots/61.PNG)
 ![alt text](shots/62.PNG)
 
-=> Source bucket : select Apply to all the bucket
+=> Source bucket : select Apply to all objects in the bucket
 
 ![alt text](shots/63.PNG)
 
@@ -488,7 +490,7 @@ Create folder => Folder name : videos => Create folder
 
 ![alt text](shots/66.PNG)
 
-=> Generate completion report : choose browser os the destination => Save
+=> Generate completion report : choose browser as the destination => Save
 
 ![alt text](shots/67.PNG)
 
@@ -511,7 +513,7 @@ Create folder => Folder name : videos => Create folder
 -> ls
 -> aws s3 sync . s3://qtvideos.learning 
 ```
-#### Using CLI
+### Using CLI
 
 * AWS S3 supports two cli commands
     * s3
@@ -519,7 +521,7 @@ Create folder => Folder name : videos => Create folder
 * AWS CLI has the following syntax :
 
   `aws <service> <action> [--arg1 value1 --argn valuen]`
-* Let's work with cloud shell today
+* Let's work with CloudShell today
 
 ![alt text](shots/69.PNG)
 ![alt text](shots/70.PNG)
@@ -530,25 +532,25 @@ Create folder => Folder name : videos => Create folder
 
     [ Refer Here : https://docs.aws.amazon.com/cli/latest/reference/s3/ ]
 
-* ls:
+* _**ls**_ :
   
   ![alt text](shots/71.PNG)
   ![alt text](shots/72.PNG)
 
-* mb: create the bucket
+* _**mb**_ : create the bucket
     * create a s3 bucket `qts3fromcli`
 
       ![alt text](shots/73.PNG)    
 
-    * In this bucket create two folders
+    * In this bucket create two folders :
         * music 
         * videos
-    * In the music upload some files
+    * In the `music` folder upload some files
       ```
       touch one.mp3
       aws s3 cp one.mp3 s3:\\music\one.mp3
       ```
-    * In the videos upload some files
+    * In the `videos` folder upload some files
       ```
       touch one.mp4
       aws s3 cp one.mp4 s3:\\videos\one.mp4
@@ -567,9 +569,9 @@ Create folder => Folder name : videos => Create folder
 #### Example
 
 * Create a bucket with name which has source in it and one more bucket with name which has destination in it.
-* Uplod some files in to source bucket (ensure you have folders) and copy the contents into destination bucket
+* Uplod some files in to `Source bucket` (ensure you have folders) and copy the contents into `Destination bucket`
     * copy one file
-    * copy all the bucket
+    * copy all the buckets
         * use sync
         * use recursive copy
     * `mv` move the object in a bucket from one folder to other folder
