@@ -8,7 +8,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/2.PNG)
 
-#### Backup and Archival
+### Backup and Archival
 
 * _**Backup**_ is meant for recovering quickly from failures, as they are commonly occuring
 * _**Archival**_ is meant for recovering from disasters, even when it takes time
@@ -17,9 +17,9 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 * _**Cloud Storage**_ solutions are very popular and cheaper for both backup and archival solutions
 
-#### Data Engineering
+### Data Engineering
 
-* Every Organization has data, which is used for two purposes :
+* Every organization has data, which is used for two purposes :
     * Business Intelligence
     * Machine Learning / AI
 * Data in your orgnaization comes from :
@@ -52,19 +52,19 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * EFS (Elastic File Share)
 * Fsx
 
-#### Storage Services by AWS
+### Storage Services by AWS
 
 ![alt text](shots/4.PNG)
 
 #### Object Storage
 
-* This is kind of storage where we can store any file and object storage, for the users who doesnot have any file system. Access to files in the object storage is done over `http(s)`
-* _**S3 (Simple Storage Service)**_ is the object `storage as a service`
+* This is a kind of storage where we can store any file and object, for the users who doesnot have any file system. Access to files in the object storage is done over `http(s)`
+* _**S3 (Simple Storage Service)**_ is the object storage - `Storage As A Service`
 
-#### AWS Simple Storage Service _**(s3)**_
+### AWS Simple Storage Service _**(s3)**_
 
 * S3 has buckets. Each Bucket can have folders or objects
-* Individual object cannot be greater than 5 TB
+* Individual object cannot be greater than 5 TB of storage
 * Let's create an S3 bucket
 
 => Navigate through s3       
@@ -79,15 +79,15 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/7.PNG)
 
- => select Object Ownership : ACLs disabled => unselect the Block all public access
+ => select Object Ownership : ACLs disabled => Block all public access : unselect
 
 ![alt text](shots/8.PNG)
 
-=> select the acknowledgement => Bucket Versioning : Disable
+=> select the acknowledge => Bucket Versioning : Disable
 
 ![alt text](shots/9.PNG)
 
-=> Encription type : Amazon S3 managed keys (SSE-S3) => Bucket key : Enable => Create bucket
+=> Encription type : Server-side encryption with Amazon S3 managed keys (SSE-S3) => Bucket key : Enable => Create bucket
 
 ![alt text](shots/10.PNG)
 
@@ -95,7 +95,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/11.PNG)
 
-=> Upload : select from the system => Upload
+=> Upload : select the files need to be uploaded => Upload
 
 ![alt text](shots/12.PNG)
 
@@ -108,21 +108,21 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * Price involved in S3 : AWS charges for using `s3` in two dimensions
     * Storage size
     * Access costs
-* To adjust access and storage costs, AWS has access tiers
-    * _**Standard**_: accesed frequently
+* To adjust Access and Storage costs, aws has `Access Tiers`
+    1.  _**Standard**_: accesed frequently
         * Access cost - less
         * Storage cost - high
-    * _**Infrequent access**_:
+    2. _**Infrequent access**_:
         * Storage cost - less
         * Access cost - high
-    * _**Glacier**_
+    3. _**Glacier**_
         * Storage cost - very low
         * No access costs
 * Now let's understand pricing at high level 
 
   [ Refer Here : https://calculator.aws/#/ ]
 
-    * Size: 10 TB
+    *Example : Size: 10 TB
         * _**Standard**_:
             * Storage cost ~= 235 $
             * Access 1000 TB ~= 716 $
@@ -131,21 +131,36 @@ Example-2 :  Amazon Prime music/videos, Netflix
             * Access 1000 TB ~= 10,240.00
         * _**Glacier**_:
             * Storage cost ~= 12 $
-* Terms
-    * _**Durability**_ : This property defines what is the chance of data not getting corrupted
-    * _**Availability**_: This property defines how much time in an year (calculated in %) is the data available
+#### Terms
+
+  * _**Durability**_ : This property defines what is the chance of data not getting corrupted
+  * _**Availability**_ : This property defines how much time in an year (calculated in %) is the data available
 * Amazon defines `Durability` and `Availability` on the basis of _**redundancy**_ (copies of the data available)
 
-#### Redundancy
+### Redundancy
     
-* By default AWS creates 3 copies of each object and stores them in 3 zones.
-* If we select reduced redundancy, then it stores only in one zone
+* By default AWS creates 3 copies of each object and stores them in 3 different zones
+* If we select `reduced redundancy`, then it stores only in one zone
 * Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
 
+=> Create bucket
+
 ![alt text](shots/14.PNG)
+
+=> Bucket type : General purpose => Bucket name : qtstoragedemoforaccess 
+
 ![alt text](shots/15.PNG)
+
+=> Object Ownership : ACLs enabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge
+
 ![alt text](shots/16.PNG)
+
+=> Encryption type : Server-side encryption with Amazon S3 managed keys(SSE-S3) => Bucket Key : Enable => Create bucket
+
 ![alt text](shots/17.PNG)
+
+
+
 ![alt text](shots/18.PNG)
 
 * Upload any object into some folder (music)
