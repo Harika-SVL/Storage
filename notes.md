@@ -151,15 +151,15 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/15.PNG)
 
-=> Object Ownership : ACLs enabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge
+=> Object Ownership : ACLs enabled => Bucket owner preferred 
 
 ![alt text](shots/16.PNG)
 
-=> Encryption type : Server-side encryption with Amazon S3 managed keys(SSE-S3) => Bucket Key : Enable => Create bucket
+=> Block all public access : unseleccted => select acknowledge 
 
 ![alt text](shots/17.PNG)
 
-
+=> Encryption type : Server-side encryption with Amazon S3 managed keys(SSE-S3) => Bucket Key : Enable => Create bucket
 
 ![alt text](shots/18.PNG)
 
