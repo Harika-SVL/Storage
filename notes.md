@@ -585,7 +585,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 ```
 * Go to bucket => copy URL => expose over browser
 
-#### S3 Bucket Policies
+### S3 Bucket Policies
 
 * S3 has a resource based access policy which is referrd as s3 bucket policies
 * S3 has support of _**acl (access control list)**_ where we can provide basic access levels such as :
