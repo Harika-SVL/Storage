@@ -724,14 +724,16 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
   ]
 }
 ```
-* _**Exercise**_ : Write a bucket policy to give access to all on your objects in a bucket
+* _**Exercise**_ 
+
+Write a bucket policy to give access to all on your objects in a bucket
 ```
 {
-  "Id": "Policy1681791649818",
+  "Id": "Policy1714800812093",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1681791641953",
+      "Sid": "Stmt1714800733599",
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
@@ -742,12 +744,13 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 ```
 ### Overview of Other Storage Types
 
-* _**Virtual Disks**_ : This storage acts a disk to an ec2 instance. To create Virtual Disks we have two options :
-    * Elastic Block Storage (EBS)
-    * Instance-Store
+* _**Virtual Disks**_ : This storage acts as a disk to an ec2 instance. To create Virtual Disks we have two options :
+  * Elastic Block Storage (EBS)
+  * Instance-Store
 * _**Network Disks**_ : To create network disks also we have two options :
-    * Elastic File Share (EFS)
-    * FsX
+  * Elastic File Share (EFS)
+  * FsX
+
 * _**EBS/Instance-Storage**_ are disk storages which are used to serve one instance at a time, where as _**EFS/FsX**_ are used to serve multiple machines over the network
 * _**Disk Technologies**_
     * Magnetic
@@ -757,8 +760,10 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
     * Size
     * Speed
 * _**Performance of the disks**_ are measured using :
-    * IOPS
-    * Throughput
+    * IOPS (no.of operations we can perform)
+    * Throughput (size)
+
+  ![alt text](shots/86.PNG)
 
 ### AWS Disk Storages
 
