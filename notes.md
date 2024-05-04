@@ -674,17 +674,17 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 * Let's change the policy to
 ```
 {
-  "Id": "Policy1681791649818",
+  "Id": "Policy1714800812093",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1681791641953",
+      "Sid": "Stmt1714800733599",
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],
       "Condition": {
         "NotIpAddress": {
-          "aws:SourceIp": "49.205.254.230/32"
+          "aws:SourceIp": "117.200.2.183/32"
         }
       },
       "Principal": "*"
@@ -692,18 +692,18 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
   ]
 }
 ```
-* Now if we want to give access to specific aws user `qtdevops`
+* Now if we want to give access to specific aws user `qtdevops` ( IAM user with no permissions)
 ```
 {
-  "Id": "Policy1681791649818",
+  "Id": "Policy1714800812093",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1681791641953",
+      "Sid": "Stmt1714800733599",
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
-      "Principal": "arn:aws:iam::678879106782:user/qtdevops"
+      "Principal": "arn:aws:iam::891376970974:user/qtdevops"
     }
   ]
 }
@@ -711,15 +711,15 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 * Now if we want to give access to specific aws user `devops`
 ```
 {
-  "Id": "Policy1681791649818",
+  "Id": "Policy1714800812093",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1681791641953",
+      "Sid": "Stmt1714800733599",
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": ["arn:aws:s3:::qtaccesspolicy", "arn:aws:s3:::qtaccesspolicy/*"],      
-      "Principal": "arn:aws:iam::678879106782:group/devops"
+      "Principal": "arn:aws:iam::891376970974:group/devops"
     }
   ]
 }
@@ -740,7 +740,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
   ]
 }
 ```
-#### Overview of Other Storage Types
+### Overview of Other Storage Types
 
 * _**Virtual Disks**_ : This storage acts a disk to an ec2 instance. To create Virtual Disks we have two options :
     * Elastic Block Storage (EBS)
@@ -760,7 +760,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
     * IOPS
     * Throughput
 
-#### AWS Disk Storages
+### AWS Disk Storages
 
 #### Amazon Elastic Block Storage
 
@@ -804,7 +804,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
     * Max I/O Mode
 * EFS cannot be mounted as os disk, where as can be mounted on any other disk
 
-#### Experiments
+### Experiments
 
 * Create two ubuntu ec2 instances in any region
 
@@ -843,7 +843,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 * Restart the machine
 * See what are mounts attached
 
-#### Tasks
+### Tasks
 
 * Create an ec2 instance
 
@@ -897,11 +897,11 @@ UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2
     * Ensure you have two linux instances up and running in the same region
     * Try doing the single machine and attaching disks in windows
 
-#### Overview of Disks on Windows and linux
+### Overview of Disks on Windows and linux
 
 
 
-#### Elastic File Share
+### Elastic File Share
 
 * This is network file share
 * Security group exists for EFS
@@ -940,7 +940,7 @@ UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2
 
 
 
-#### AWS FsX
+### AWS FsX
 
 * FSx is an AWS Managed service for file shares from third parties
 * As of now AWS supports :
@@ -951,7 +951,7 @@ UUID=ed4b67f9-3002-461b-ac30-0bb71e4c3f4c /tools xfs defaults,nofail 1 2
 
 
 
-#### Glacier
+### Glacier
 * For Glacier Data Models
 
     [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-data-model.html ]
@@ -997,7 +997,7 @@ aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 
 
 
 
-#### Exercies
+### Exercies
 
 * What is max file size for individual file in S3
 * What does eleven 9’s durability means
