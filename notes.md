@@ -601,7 +601,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 
 ![alt text](shots/75.PNG)
 
-* We can create s3 bucket policies using policy generator 
+* We can create s3 bucket policies using `Policy generator` 
 
   [ Refer Here : https://awspolicygen.s3.amazonaws.com/policygen.html ]
 
@@ -611,9 +611,9 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 
 ![alt text](shots/76.PNG)
 
-=> Find `my ip` - `117.200.2.183/32` from Ec2 or Security groups
+=> Find `my ip` - `117.200.2.183/32` from EC2 or Security groups
 
-* From the policy generator
+* From the _**Policy generator**_
 
 => Select Type of Policy : S3 Bucket Policy => Effect : Allow => Principal : * => Actions : select All actions => Amazon Resource Name (ARN) : [copied from the bucket] 
 
@@ -659,7 +659,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 
 ![alt text](shots/81.PNG)
 
-=> paste te generated policy 
+=> paste the generated policy 
 
 ![alt text](shots/82.PNG)
 
@@ -753,7 +753,7 @@ Write a bucket policy to give access to all on your objects in a bucket
   * Elastic File Share (EFS)
   * FsX
 
-* _**EBS/Instance-Storage**_ are disk storages which are used to serve one instance at a time, where as _**EFS/FsX**_ are used to serve multiple machines over the network
+* _**EBS/Instance-Storage**_ are disk storages which are used to serve one instance at a time, where as _**EFS/FsX**_ are used to serve multiple machines over a network
 * _**Disk Technologies**_
     * Magnetic
     * Hard Disk Drives (HDD)
@@ -765,14 +765,14 @@ Write a bucket policy to give access to all on your objects in a bucket
     * IOPS (no.of operations we can perform)
     * Throughput (size)
 
-  ![alt text](shots/86.PNG)
+![alt text](shots/86.PNG)
 
 ### AWS Disk Storages
 
 #### Amazon Elastic Block Storage
 
 * This is a service that offers a persistent storage for ec2 instances
-* EBS has to be _**os disk**_ in AWS
+* EBS has to be _**os disk**_ in aws
 * EBS will be from the same zone in a region where ec2 is launched
 * EBS is physically located in different server in the same zone where ec2 is launched where as instance store comes from the same physical location
 * _**Instance store**_ is supported only by few instance types
@@ -785,22 +785,23 @@ Write a bucket policy to give access to all on your objects in a bucket
 * Backups of EBS volumes are called as _**Snapshots**_
 * Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
 * _**EBS Volumes types**_
-    1. _**General Purpose SSD**_ :
+
+  1. _**General Purpose SSD**_ :
         * IOPS : 100 to 16,000 IOPS
-        * good performace at low cost
-    2. _**Provisioned IOPS SSD**_ :
+      * good performace at low cost
+  2. _**Provisioned IOPS SSD**_ :
         * IOPS : 100 to 100000 iops
         * Size to IOPS ratio has to be between (1:50)
-    3. HDD-Backed Volume
-    4. Throughput Optimized HDD
-    5. ColdHDD
+  3. HDD-Backed Volume
+  4. Throughput Optimized HDD
+  5. ColdHDD
 
        ![alt text](shots/88.PNG)
 
 * AWS can provide :
     * empty disks to EC2
     * disks from snapshots to EC2
-* EC2 disk sizes can be increased, but not decreased (due to the chhance of memory loss)
+* EC2 disk sizes can be increased, but not decreased (as there is a chance of memory loss)
 
 #### Amazon Elastic File Share
 
@@ -848,7 +849,7 @@ Write a bucket policy to give access to all on your objects in a bucket
 
 ![alt text](shots/96.PNG)
 
-=> Availability zone : us-west-2a => Create volume
+=> Availability zone : us-east-1a => Create volume
 
 ![alt text](shots/97.PNG)
 ![alt text](shots/98.PNG)
