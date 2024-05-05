@@ -1107,14 +1107,19 @@ aws glacier create-vault --account-id '891376970974' --vault 'qtvault'
 
 * To get all the archive ids
 ```
-aws glacier initiate-job --vault-name awsexamplevault --account-id 111122223333 --job-parameters "{\"Type\":\"inventory-retrieval\"}"
+aws glacier initiate-job --vault-name 'awsexamplevault' --account-id '111122223333' --job-parameters "{\"Type\":\"inventory-retrieval\"}"
+```
+* To delete an archive
+```
+aws glacier delete-archive --vault-name '' --account-id '' --archive-id ""
 ```
 * Glacier has 3 types :
+
     * Instant Retrieval (costliest glacier storage cost)
     * Instant Flexible Retrival
     * Deep archive (cheapest glacier storage cost)
 
-
+![alt text](shots/136.PNG)
 
 ### Exercies
 
