@@ -1032,7 +1032,16 @@ ls /tools/
 => login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
 
 ```
-
+sudo apt-get update
+sudo apt-get -y install git binutils
+git clone https://github.com/aws/efs-utils
+cd efs-utils
+./build-deb.sh
+sudo apt-get -y install ./build/amazon-efs-utils*deb
+sudo mkdir /networktools
+sudo mount -t efs -o tls fs-0576a03dc2e1c4278:/ /networktools/
+sudo df -h
+ls /networktools/
 ```
 ### AWS FsX
 
