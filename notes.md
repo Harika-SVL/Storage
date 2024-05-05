@@ -1025,11 +1025,14 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 sudo yum update
 sudo mkdir /tools
 sudo yum install -y amazon-efs-utils
-sudo mount -t efs -o tls fs-0576a03dc2e1c4278:/ /tools
+sudo mount -t efs -o tls fs-090da91157fcf8ec9:/ /tools
 sudo df -h
 sudo touch /tools/{1..10}.txt
 ls /tools/
 ```
+![alt text](shots/127.PNG)
+![alt text](shots/128.PNG)
+
 => login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
 
 ```
@@ -1040,14 +1043,16 @@ cd efs-utils
 ./build-deb.sh
 sudo apt-get -y install ./build/amazon-efs-utils*deb
 sudo mkdir /networktools
-sudo mount -t efs -o tls fs-0576a03dc2e1c4278:/ /networktools/
+sudo mount -t efs -o tls fs-090da91157fcf8ec9:/ /networktools
 sudo df -h
 ls /networktools/
 ```
+![alt text](shots/129.PNG)
+
 ### AWS FsX
 
-* FSx is an AWS Managed service for file shares from third parties
-* As of now AWS supports :
+* FSx is an aws Managed service for file shares from third parties
+* As of now aws supports :
     * NetAPP
     * Windows File Share
     * ZFS
@@ -1056,6 +1061,7 @@ ls /networktools/
 
 
 ### Glacier
+
 * For Glacier Data Models
 
     [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-data-model.html ]
