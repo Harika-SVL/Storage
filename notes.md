@@ -141,7 +141,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ### Redundancy
     
 * By default AWS creates 3 copies of each object and stores them in 3 different zones
-* If we select _**`reduced redundancy`**_`, then it stores only in one zone
+* If we select _**`reduced redundancy`**_, then it stores only in one zone
 * Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
 
 => Create bucket
@@ -175,7 +175,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/21.PNG)
 
-=> select music folder => upload : one.mp3 and two.mp3 => Permissions : Grant public- read access = Upload
+=> select music folder => upload : one.mp3 and two.mp3 => Permissions : Grant public- read access => Upload
 
 ![alt text](shots/22.PNG)
 ![alt text](shots/23.PNG)
@@ -189,7 +189,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/26.PNG)
 
-* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/music/one.mp3` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
+* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/music/one.mp3` i.e _**https://_**`s3-bucketname**_`.s3.region.amazonaws.com/_**`object`**_
 
 => Try similar for videos upload too
 
