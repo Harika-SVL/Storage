@@ -195,7 +195,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/27.PNG)
 
-* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/videos/two.mp4` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
+* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/videos/two.mp4` i.e _** https://(<s3-bucketname).s3.region.amazonaws.com/(<object) **_
 
 ### Storage Classes
 
