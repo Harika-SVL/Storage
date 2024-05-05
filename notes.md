@@ -122,15 +122,16 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
   [ Refer Here : https://calculator.aws/#/ ]
 
-    *Example : Size: 10 TB
-        * _**Standard**_:
-            * Storage cost ~= 235 $
-            * Access 1000 TB ~= 716 $
-        * _**Infrequent**_:
-            * Storage cost ~= 128 $
-            * Access 1000 TB ~= 10,240.00
-        * _**Glacier**_:
-            * Storage cost ~= 12 $
+  * Example : Size: 10 TB
+    * _**Standard**_:
+        * Storage cost ~= 235 $
+        * Access 1000 TB ~= 716 $
+    * _**Infrequent**_:
+        * Storage cost ~= 128 $
+        * Access 1000 TB ~= 10,240.00
+    * _**Glacier**_:
+        * Storage cost ~= 12 $
+        
 #### Terms
 
   * _**Durability**_ : This property defines what is the chance of data not getting corrupted
