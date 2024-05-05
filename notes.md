@@ -1022,6 +1022,7 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 => login to the zone 1b (Amazon linux) machine `ssh ec2-user@ip-address`
 
 ```
+sudo yum update
 sudo mkdir /tools
 sudo yum install -y amazon-efs-utils
 sudo mount -t efs -o tls fs-0576a03dc2e1c4278:/ /tools
