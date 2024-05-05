@@ -966,11 +966,6 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 ![alt text](shots/118.PNG)
 
-#### Lab Setup
-    
-  * Ensure you have two linux instances up and running in the same region
-  * Try doing the single machine and attaching disks in windows
-
 ### Elastic File Share
 
 * This is network file share
@@ -979,45 +974,39 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 * EFS works only with linux instances
 * Let's create two ec2 instances in different zones
 
-=> Launch instances => name : zone a => ubuntu => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1d => Security group => launch instance
+=> Launch instances => name : zone a => ubuntu => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1a => Security group => launch instance
 
 => Launch instances => name : zone a => amazon linux 2 => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1e => Security group => launch instance
 
-![alt text](shots/119.PNG)
-![alt text](shots/120.PNG)
+
 
 * Create a efs file share
 
 => Navigate through EFS => Create file system 
 
-![alt text](shots/121.PNG)
+
 
 => name : tools => VPC : default => Customize 
 
-![alt text](shots/122.PNG)
+
 
 => select Enable automatic backups 
 
-![alt text](shots/123.PNG)
+
 
 => Next => Mount Targets : 1d => Security group => Mount Targets : 1e => Security groups => Next
 
-![alt text](shots/124.PNG)
+
 
 => Next => Create
 
-![alt text](shots/125.PNG)
+
 
 * Now view details
 
-=> Dns name : volume 
-
-![alt text](shots/126.PNG)
-![alt text](shots/127.PNG)
-
 => Attach
 
-![alt text](shots/128.PNG)
+
 
 * Mounting using efs mount helper 
 
@@ -1027,27 +1016,17 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
     [ Refer Here : https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-helper-ec2-linux.html ]
 
-* Mount one ec2 instance and create files
+* Mount ec2 instance and create files
 
-=> login to the zone 1e (Amazon linux) machine `ssh ec2-user@ip-address`
-
-```
-sudo yum update -y
-sudo mkdir /tools
-sudo yum install -y amazon-efs-utils     ## from the link above
-sudo mount -t efs -o tls fs-0b8ea66976e644365:/ /tools
-sudo df -h
-sudo touch /tools/{1..10}.txt
-ls /tools/
-```
-=> login to the zone 1d (Ubuntu) machine `ssh ubuntu@ip-address`
+=> login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
 
 ```
-sudo apt-get update 
-sudo apt-get -y install git binutils
-cd /efs-utils
-./build-deb.sh
-sudo apt-get -y install ./build/amazon-efs-utils*deb
+
+```
+=> login to the zone 1b (Amazon linux) machine `ssh ec2-user@ip-address`
+
+```
+
 ```
 ### AWS FsX
 
