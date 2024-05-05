@@ -109,15 +109,16 @@ Example-2 :  Amazon Prime music/videos, Netflix
     * Storage size
     * Access costs
 * To adjust Access and Storage costs, aws has `Access Tiers`
-    1.  _**Standard**_: accesed frequently
-        * Access cost - less
-        * Storage cost - high
-    2. _**Infrequent access**_:
-        * Storage cost - less
-        * Access cost - high
-    3. _**Glacier**_
-        * Storage cost - very low
-        * No access costs
+
+1.  _**Standard**_: accesed frequently
+    * Access cost - less
+    * Storage cost - high
+2. _**Infrequent access**_:
+    * Storage cost - less
+    * Access cost - high
+3. _**Glacier**_
+    * Storage cost - very low
+    * No access costs
 * Now let's understand pricing at high level 
 
   [ Refer Here : https://calculator.aws/#/ ]
