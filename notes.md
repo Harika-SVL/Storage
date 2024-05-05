@@ -1058,7 +1058,7 @@ ls /networktools/
     * ZFS
     * Lustre
 
-
+![alt text](shots/130.PNG)
 
 ### Glacier
 
@@ -1070,23 +1070,32 @@ ls /networktools/
 
     [ Refer Here : https://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults-cli.html ]
 
+* Download and configure `AWS CLI`
+
+=> IAM => create a user => take the access key and security key
+
+![alt text](shots/131.PNG)
+
 * For the glacier cli
 
     [ Refer here : https://docs.aws.amazon.com/cli/latest/reference/glacier/ ]
 
 * Create a vault
-```
-aws glacier create-vault --acount-id <your-acc-id> --vault-name 'qtvault'
-```
 
-
+ _**aws glacier create-vault --acount-id (<your-aws-account-id) --vault-name 'qtvault'**_
+```
+aws glacier create-vault --account-id '891376970974' --vault 'qtvault'
+```
+![alt text](shots/132.PNG)
+![alt text](shots/133.PNG)
 
 * Create a zip file with some content
 * Upload the zip file to the vault 
 
     [ Refer Here : https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-single-operation.html ]
 
-
+![alt text](shots/134.PNG)
+![alt text](shots/135.PNG)
 
 * If you want to deal with large file by breaking that into multiple parts
 
