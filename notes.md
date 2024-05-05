@@ -141,7 +141,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ### Redundancy
     
 * By default AWS creates 3 copies of each object and stores them in 3 different zones
-* If we select `_**reduced redundancy**_`, then it stores only in one zone
+* If we select _**`reduced redundancy`**_`, then it stores only in one zone
 * Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
 
 => Create bucket
