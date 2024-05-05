@@ -974,39 +974,40 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 * EFS works only with linux instances
 * Let's create two ec2 instances in different zones
 
-=> Launch instances => name : zone a => ubuntu => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1a => Security group => launch instance
+=> Launch instances => name : ubuntu-1a => ubuntu => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1a => Security group => launch instance
 
-=> Launch instances => name : zone a => amazon linux 2 => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1e => Security group => launch instance
+=> Launch instances => name : amazon-linux-1b => amazon linux 2 - volume type => instance type : t2.micro => keypair : PubKey => Network settings : subnet- us-east-1b => Security group => launch instance
 
-
+![alt text](shots/119.PNG)
 
 * Create a efs file share
 
 => Navigate through EFS => Create file system 
 
-
+![alt text](shots/120.PNG)
 
 => name : tools => VPC : default => Customize 
 
-
+![alt text](shots/121.PNG)
 
 => select Enable automatic backups 
 
-
+![alt text](shots/122.PNG)
 
 => Next => Mount Targets : 1d => Security group => Mount Targets : 1e => Security groups => Next
 
-
+![alt text](shots/123.PNG)
 
 => Next => Create
 
-
+![alt text](shots/124.PNG)
 
 * Now view details
 
-=> Attach
+=> DNS name (Disk location) => Attach
 
-
+![alt text](shots/125.PNG)
+![alt text](shots/126.PNG)
 
 * Mounting using efs mount helper 
 
@@ -1018,12 +1019,17 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 * Mount ec2 instance and create files
 
-=> login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
-
-```
-
-```
 => login to the zone 1b (Amazon linux) machine `ssh ec2-user@ip-address`
+
+```
+sudo mkdir /tools
+sudo yum install -y amazon-efs-utils
+sudo mount -t efs -o tls fs-0576a03dc2e1c4278:/ /tools
+sudo df -h
+sudo touch /tools/{1..10}.txt
+ls /tools/
+```
+=> login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
 
 ```
 
