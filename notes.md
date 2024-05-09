@@ -784,17 +784,18 @@ Write a bucket policy to give access on all the objects in a bucket
 * EBS can be attached to only one ec2 instance at any given moment
 * Backups of EBS volumes are called as _**Snapshots**_
 * Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
-* _**EBS Volumes types**_
+
+#### EBS Volumes types
 
  1. _**General Purpose SSD**_ :
-        * IOPS : 100 - 16,000 iops
+      * IOPS : 100 - 16,000 iops
       * good performace at low cost
  2. _**Provisioned IOPS SSD**_ :
-        * IOPS : 100 - 100000 iops
-        * Size - IOPS ratio has to be between (1:50)
- 3. HDD-Backed Volume
+      * IOPS : 100 - 100000 iops
+      * Size - IOPS ratio has to be between (1:50)
+ 3. HDD - Backed Volume
  4. Throughput Optimized HDD
- 5. ColdHDD
+ 5. Cold HDD
 
        ![alt text](shots/88.PNG)
 
