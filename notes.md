@@ -110,40 +110,40 @@ Example-2 :  Amazon Prime music/videos, Netflix
     * Access costs
 * To adjust Access and Storage costs, aws has `Access Tiers`
 
-1.  _**Standard**_: accesed frequently
+1.  _**Standard**_ : accesed frequently
     * Access cost - less
     * Storage cost - high
-2. _**Infrequent access**_:
+2. _**Infrequent access**_ :
     * Storage cost - less
     * Access cost - high
-3. _**Glacier**_
+3. _**Glacier**_ :
     * Storage cost - very low
     * No access costs
 * Now let's understand pricing at high level 
 
   [ Refer Here : https://calculator.aws/#/ ]
 
-  * Example : Size: 10 TB
-    * _**Standard**_:
+  * Example : Size - 10 TB
+    * _**Standard**_ :
         * Storage cost ~= 235 $
         * Access 1000 TB ~= 716 $
-    * _**Infrequent**_:
+    * _**Infrequent**_ :
         * Storage cost ~= 128 $
         * Access 1000 TB ~= 10,240.00
-    * _**Glacier**_:
+    * _**Glacier**_ :
         * Storage cost ~= 12 $
 
 #### Terms
 
   * _**Durability**_ : This property defines what is the chance of data not getting corrupted
   * _**Availability**_ : This property defines how much time in an year (calculated in %) is the data available
-* Amazon defines `Durability` and `Availability` on the basis of _**redundancy**_ (copies of the data available)
+* Amazon defines `Durability` and `Availability` on the basis of _**Redundancy**_ (copies of the data available)
 
 ### Redundancy
     
 * By default AWS creates 3 copies of each object and stores them in 3 different zones
 * If we select _**`reduced redundancy`**_, then it stores only in one zone
-* Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselcted
+* Create s3 bucket with `ACLs enabled` and ensure `block all public access` is unselected
 
 => Create bucket
 
@@ -157,7 +157,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/16.PNG)
 
-=> Block all public access : unseleccted => select acknowledge 
+=> Block all public access : unselected => select acknowledge 
 
 ![alt text](shots/17.PNG)
 
@@ -190,7 +190,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/26.PNG)
 
-* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/music/one.mp3` i.e _**https://_**`s3-bucketname**_`.s3.region.amazonaws.com/_**`object`**_
+* The URL is `https://qtstoragedemoforaccess.s3.amazonaws.com/music/one.mp3` i.e _**https://(<s3-bucketname).s3.region.amazonaws.com/(<object)**_
 
 => Try similar for videos upload too
 
