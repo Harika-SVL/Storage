@@ -776,8 +776,8 @@ Write a bucket policy to give access on all the objects in a bucket
 * EBS will be from the same zone in a region where ec2 is launched
 * EBS is physically located in different server in the same zone where ec2 is launched where as instance store comes from the same physical location
 * _**Instance store**_ is supported only by few instance types
-* AWS uses a term called as _**Volume**_ to represent disk
-* Root volume is disk with os which has to be EBS
+* AWS uses a term called as _**Volume**_ to represent the disk
+* _**Root volume**_ is disk with os which has to be EBS
 
 ![alt text](shots/87.PNG)
 
@@ -786,15 +786,15 @@ Write a bucket policy to give access on all the objects in a bucket
 * Snapshots can be taken manually or AWS Backup service can automatically take backups according to schedules
 * _**EBS Volumes types**_
 
-  1. _**General Purpose SSD**_ :
-        * IOPS : 100 to 16,000 IOPS
+ 1. _**General Purpose SSD**_ :
+        * IOPS : 100 - 16,000 iops
       * good performace at low cost
-  2. _**Provisioned IOPS SSD**_ :
-        * IOPS : 100 to 100000 iops
-        * Size to IOPS ratio has to be between (1:50)
-  3. HDD-Backed Volume
-  4. Throughput Optimized HDD
-  5. ColdHDD
+ 2. _**Provisioned IOPS SSD**_ :
+        * IOPS : 100 - 100000 iops
+        * Size - IOPS ratio has to be between (1:50)
+ 3. HDD-Backed Volume
+ 4. Throughput Optimized HDD
+ 5. ColdHDD
 
        ![alt text](shots/88.PNG)
 
