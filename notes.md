@@ -765,7 +765,7 @@ Write a bucket policy to give access on all the objects in a bucket
     * IOPS (no.of operations we can perform)
     * Throughput (size)
 
-![alt text](shots/86.PNG)
+  ![alt text](shots/86.PNG)
 
 ### AWS Disk Storages
 
