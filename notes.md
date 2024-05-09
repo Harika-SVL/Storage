@@ -44,7 +44,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 #### Units in Storage
 
 * KB vs KiB
-* IOPS
+* IOPS ( Input / Output operations Per Second)
 * Throughput
 
 #### File Shares (Network Storage)
@@ -589,7 +589,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 
 ### S3 Bucket Policies
 
-* S3 has a resource based access policy which is referrd as s3 bucket policies
+* S3 has a resource based access policy which is referred as s3 bucket policies
 * S3 has support of _**ACL (Access Control List)**_ where we can provide basic access levels such as :
   * private
   * public-read
@@ -597,7 +597,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 
 * Let's create a bucket in s3
 
-=> Create bucket => Bucket type : General purpose => Bucket name : qtaccesspolicy => Object Ownership : ACLs disabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge => Create bucket
+=> Create bucket => Bucket type : General purpose => Bucket name : qtaccesspolicy => Object Ownership : ACLs disabled => Bucket owner preferred => Block all public access : unselected => select acknowledge => Create bucket
 
 ![alt text](shots/75.PNG)
 
@@ -710,7 +710,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
   ]
 }
 ```
-* Now if we want to give access to specific aws user `devops`
+* Now if we want to give access to specific aws user `devops` ( IAM user with administration access )
 ```
 {
   "Id": "Policy1714800812093",
@@ -728,7 +728,7 @@ aws s3 cp one.txt s3://qtvideos.learning/one.txt --acl public-read
 ```
 * _**Exercise**_ 
 
-Write a bucket policy to give access to all on your objects in a bucket
+Write a bucket policy to give access on all the objects in a bucket
 ```
 {
   "Id": "Policy1714800812093",
