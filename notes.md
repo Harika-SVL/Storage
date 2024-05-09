@@ -804,7 +804,7 @@ Write a bucket policy to give access on all the objects in a bucket
     * disks from snapshots to EC2
 * EC2 disk sizes can be increased, but not decreased (as there is a chance of memory loss)
 
-#### Amazon Elastic File Share
+#### Amazon Elastic File Share ( EFS )
 
 * Fully managed file share which can be mounted to multiple linux instances
 * This is storage from network, so it comes with security group
@@ -826,7 +826,7 @@ Write a bucket policy to give access on all the objects in a bucket
 
 ![alt text](shots/91.PNG)
 
-* Make a note of Volumes created
+* Make a note of volumes created
 
 ![alt text](shots/92.PNG)
 
@@ -887,7 +887,7 @@ Write a bucket policy to give access on all the objects in a bucket
 
 ![alt text](shots/104.PNG)
 
-* Create a new empty volume (Size 1 GB)
+* Create a new empty volume ( Size-1GB )
 
 => volumes => Create volume => size : 1GB => Availability zone : same as ec2 => Create volume => name : tools
 
@@ -924,7 +924,7 @@ Write a bucket policy to give access on all the objects in a bucket
 
 => stop and start the instance => relogin using new ip
 
-* See what are mounts attached
+* See where are mounts attached
 
 => sudo lsblk => sudo df -h
 
@@ -955,7 +955,7 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 => stop and start the instance => relogin with the new ip
 
-[ _**Note**_ : When doesn't work let's connect the volume to another running new instance]
+[ _**Note**_ : When doesn't work, then connect the volume to another running new instance ]
 
 * For the instructions :
 
@@ -971,7 +971,7 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 * This is network file share
 * Security group exists for EFS
-* EFS is a regional resource, where we mention in which zones we want to have mounts. Sync of data across AZ’s is managed by AWS
+* EFS is a regional resource, where we mention in which zones we want to have mounts. Sync of data across AZ’s is managed by aws
 * EFS works only with linux instances
 * Let's create two ec2 instances in different zones
 
@@ -981,7 +981,7 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 ![alt text](shots/119.PNG)
 
-* Create a efs file share
+* Create a EFS file share
 
 => Navigate through EFS => Create file system 
 
@@ -1020,7 +1020,7 @@ UUID=b897c8e8-7c85-40e7-9e37-f9d14cc3f6b6 /tools xfs defaults,nofail 1 2
 
 * Mount ec2 instance and create files
 
-=> login to the zone 1b (Amazon linux) machine `ssh ec2-user@ip-address`
+=> login to the zone 1b ( Amazon linux ) machine `ssh ec2-user@ip-address`
 
 ```
 sudo yum update
@@ -1034,7 +1034,7 @@ ls /tools/
 ![alt text](shots/127.PNG)
 ![alt text](shots/128.PNG)
 
-=> login to the zone 1a (Ubuntu) machine `ssh ubuntu@ip-address`
+=> login to the zone 1a ( Ubuntu ) machine `ssh ubuntu@ip-address`
 
 ```
 sudo apt-get update
@@ -1083,7 +1083,7 @@ ls /networktools/
 
 * Create a vault
 
- _**aws glacier create-vault --acount-id (<your-aws-account-id) --vault-name 'qtvault'**_
+ _**aws glacier create-vault --account-id (<your-aws-account-id) --vault-name 'qtvault'**_
 ```
 aws glacier create-vault --account-id '891376970974' --vault 'qtvault'
 ```
@@ -1102,7 +1102,7 @@ aws glacier create-vault --account-id '891376970974' --vault 'qtvault'
 
     [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive-mpu-using-cli.html ]
 
-* For downloading the archive (during disasters)
+* For downloading the archive ( during disasters )
 
     [ Refer here : https://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-using-cli.html ]
 
@@ -1116,21 +1116,20 @@ aws glacier delete-archive --vault-name '' --account-id '' --archive-id ""
 ```
 * Glacier has 3 types :
 
-    * Instant Retrieval (costliest glacier storage cost)
+    * Instant Retrieval ( costliest glacier storage cost )
     * Instant Flexible Retrival
-    * Deep archive (cheapest glacier storage cost)
+    * Deep archive ( cheapest glacier storage cost )
 
 ![alt text](shots/136.PNG)
 
-### Exercies
+#### Exercies
 
-* What is max file size for individual file in S3
-* What does eleven 9’s durability means
-* What are different storage classes in S3
-* How to take backup of EBS volume in an automated and manual fashion
-* Explain EBS disk types from slowest to fastest disk
-* Max size of Disk in EBS
-* What is Max Disk Size in EFS
+* What is max file size for an individual file in S3 ?
+* What does _**Eleven 9’s**_ durability means ?
+* What are different _**storage classes**_ in S3 ?
+* How to take _**backup of EBS volume**_ in an automated and manual fashion ?
+* Explain _**EBS disk types**_ from slowest to fastest disk.
+* What is _**Max Disk Size**_ in EFS and EBS ?
 
 
 
