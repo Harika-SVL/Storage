@@ -219,7 +219,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 => select the bucket => select object => object actions => Edit storage class => select the storage class => Save changes
 
-[_**Note**_ : It is difficult to do individually for many number of objects from a bucket]
+[ _**Note**_ : It is difficult to do individually for many number of objects from a bucket ]
 
 * I want to have the object :
     * for the first 30 days in Standard
@@ -251,7 +251,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 ![alt text](shots/32.PNG)
 ![alt text](shots/33.PNG)
 
-*  Create a text file `hello` and upload to s3 into `docs`folder in the bucket with public access with some content and try accessing it 
+*  Create a text file `hello` and upload it into s3-`docs`folder in the bucket with public-access, some content and try accessing it 
 
 ![alt text](shots/34.PNG)
 ![alt text](shots/35.PNG)
@@ -292,11 +292,11 @@ Example-2 :  Amazon Prime music/videos, Netflix
     * css
     * javascript
 * Let's create a simple webpage with :
-    * index.html (home page)
+    * index.html (`home page`)
     ```
     <h1>Sample Webpage for learning</h1>
     ```
-    * error.html (error page)
+    * error.html (`error page`)
     ```
     <h1>Error occurred</h1>
     <h2>Contact your admin</h2>
@@ -305,7 +305,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 * Create a bucket with `ACLs enabled` and grant `public-read only access`
 
-=> Create bucket => Bucket type : General purpose => Bucket name : mywebpage.website => Object Ownership : ACLs enabled => Bucket owner preferred => Block all public access : unseleccted => select acknowledge => Create bucket
+=> Create bucket => Bucket type : General purpose => Bucket name : mywebpage.website => Object Ownership : ACLs enabled => Bucket owner preferred => Block all public access : unselected => select acknowledge => Create bucket
 
 ![alt text](shots/46.PNG)
 
@@ -325,11 +325,11 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
 ![alt text](shots/50.PNG)
 
-=> Navigate to objects and upload the documents along with public access
+=> Navigate to objects and upload the documents along with public-access
 
 ![alt text](shots/51.PNG)
 
-=> Expose over the wesite with the URL
+=> Expose over the browser with the URL
 
 ![alt text](shots/52.PNG)
 
@@ -429,7 +429,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 
   [ Refer Here : https://www.feitsui.com/en/article/3 ]
 
-* To enable CDN, AWS has a service called as _**Cloud Front**_
+* To enable CDN, aws has a service called as _**Cloud Front**_
 * Let's create a distribution
 
 => Navigate through Cloud Front => Create Distribution => select Origin domain : qtvideos.learning => Create distribution
@@ -523,7 +523,7 @@ Example-2 :  Amazon Prime music/videos, Netflix
 * AWS CLI has the following syntax :
 
   `aws <service> <action> [--arg1 value1 --argn valuen]`
-* Let's work with CloudShell today
+* Let's work with CloudShell 
 
 ![alt text](shots/69.PNG)
 ![alt text](shots/70.PNG)
